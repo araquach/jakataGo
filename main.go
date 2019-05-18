@@ -20,10 +20,9 @@ func must(err error) {
 }
 
 func main() {
-	homeView = views.NewView("bootstrap", "views/home.gohtml")
+	homeView = views.NewView("main", "views/home.gohtml")
 
 	r := mux.NewRouter()
 	r.HandleFunc("/", home)
-	r.HandleFunc("/contact", contact)
 	http.ListenAndServe(":3000", r)
 }

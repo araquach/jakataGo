@@ -2,7 +2,7 @@
 <!DOCTYPE HTML>
 <html>
 
-{{define "head"}}
+{{template "head"}}
 
 <body>
 <div id="main">
@@ -14,8 +14,8 @@
                 </div>
                 <nav class="navbar is-primary" role="navigation" aria-label="main navigation">
                     <div class="navbar-brand is-hidden-desktop">
-                        <a href="{{ URL::to('/') }}" class="navbar-item">
-                            <img src="{{ asset('images/main/jakata_logo_white.png') }}">
+                        <a href="" class="navbar-item">
+                            <img src="images/main/jakata_logo_white.png">
                         </a>
                         <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
                             <span aria-hidden="true"></span>
@@ -26,21 +26,19 @@
 
                     <div id="navbarBasicExample" class="navbar-menu">
                         <div class="navbar-start">
-                            {!! link_to('/', 'Home', ['class' => 'navbar-item']) !!}
-                            {!! link_to('recruitment', 'Recruitment', ['class' => 'navbar-item']) !!}
-                            {!! link_to('team', 'Team', ['class' => 'navbar-item']) !!}
-                            {!! link_to('prices', 'Prices', ['class' => 'navbar-item']) !!}
-                            {!! link_to('blog', 'Blog', ['class' => 'navbar-item']) !!}
-                            {!! link_to('details', 'Contact', ['class' => 'navbar-item']) !!}
-
+                            <a href="/" class="navbar-item">Home</a>
+                            <a href="/recruitment" class="navbar-item">Recruitment</a>
+                            <a href="/team" class="navbar-item">Team</a>
+                            <a href="/blog" class="navbar-item">Blog</a>
+                            <a href="/details" class="navbar-item">Contact</a>
 
                             <div class="navbar-item has-dropdown is-hoverable">
                                 <a class="navbar-link">
                                     More
                                 </a>
                                 <div class="navbar-dropdown">
-                                    {!! link_to('reviews', 'Reviews', ['class' => 'navbar-item']) !!}
-                                    {!! link_to('prices', 'Prices', ['class' => 'navbar-item']) !!}
+                                    <a href="/reviews" class="navbar-item">Reviews</a>
+                                    <a href="/prices" class="navbar-item">Prices</a>
                                 </div>
                             </div>
                         </div>
@@ -50,7 +48,7 @@
         </header>
 
         <div id="content">
-            {{define "yield"}}
+            {{template "yield"}}
         </div>
 
         <footer class="footer">
@@ -103,22 +101,22 @@
             <div class="social columns is-mobile">
                 <div class="column">
                     <a href="" target="_blank">
-                        <img src="{{ asset('images/footer/social/facebook.png') }}">
+                        <img src="/images/footer/social/facebook.png">
                     </a>
                 </div>
                 <div class="column">
                     <a href="" target="_blank">
-                        <img src="{{ asset('images/footer/social/instagram.png') }}">
+                        <img src="/images/footer/social/instagram.png">
                     </a>
                 </div>
                 <div class="column" target="_blank">
                     <a href="">
-                        <img src="{{ asset('images/footer/social/twitter.png') }}">
+                        <img src="/images/footer/social/twitter.png">
                     </a>
                 </div>
                 <div class="column">
                     <a href="" target="_blank">
-                        <img src="{{ asset('images/footer/social/pinterest.png') }}">
+                        <img src="/images/footer/social/pinterest.png">
                     </a>
                 </div>
             </div>
