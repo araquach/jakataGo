@@ -15,6 +15,8 @@ var detailsView *views.View
 var contactView *views.View
 var reviewsView *views.View
 var salonView *views.View
+var pricesView *views.View
+var recruitmentView *views.View
 
 func home(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Content-Type", "text/html")
@@ -61,6 +63,16 @@ func salon(w http.ResponseWriter, r *http.Request) {
 	must(salonView.Render(w, nil))
 }
 
+func prices(w http.ResponseWriter, r *http.Request) {
+	w.Header().Set("Content-Type", "text/html")
+	must(pricesView.Render(w, nil))
+}
+
+func recruitment(w http.ResponseWriter, r *http.Request) {
+	w.Header().Set("Content-Type", "text/html")
+	must(recruitmentView.Render(w, nil))
+}
+
 func must(err error) {
 	if err != nil {
 		panic(err)
@@ -77,6 +89,8 @@ func main() {
 	contactView = views.NewView("main", "views/contact.gohtml")
 	reviewsView = views.NewView("main", "views/reviews.gohtml")
 	salonView = views.NewView("main", "views/salon.gohtml")
+	pricesView = views.NewView("main", "views/prices.gohtml")
+	recruitmentView = views.NewView("main", "views/recruitment.gohtml")
 
 	r := mux.NewRouter()
 	r.HandleFunc("/", home)
@@ -88,6 +102,8 @@ func main() {
 	r.HandleFunc("/contact", contact)
 	r.HandleFunc("/reviews", reviews)
 	r.HandleFunc("/salon", salon)
+	r.HandleFunc("/prices", prices)
+	r.HandleFunc("/recruitment", recruitment)
 
 	http.ListenAndServe(":3000", r)
 }
