@@ -13,6 +13,7 @@ var blogView *views.View
 var blog_indView *views.View
 var detailsView *views.View
 var contactView *views.View
+var reviewsView *views.View
 
 func home(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Content-Type", "text/html")
@@ -49,6 +50,11 @@ func contact(w http.ResponseWriter, r *http.Request) {
 	must(contactView.Render(w, nil))
 }
 
+func reviews(w http.ResponseWriter, r *http.Request) {
+	w.Header().Set("Content-Type", "text/html")
+	must(reviewsView.Render(w, nil))
+}
+
 func must(err error) {
 	if err != nil {
 		panic(err)
@@ -63,6 +69,7 @@ func main() {
 	blog_indView = views.NewView("main", "views/blog_ind.gohtml")
 	detailsView = views.NewView("main", "views/details.gohtml")
 	contactView = views.NewView("main", "views/contact.gohtml")
+	reviewsView = views.NewView("main", "views/reviews.gohtml")
 
 	r := mux.NewRouter()
 	r.HandleFunc("/", home)
@@ -72,5 +79,6 @@ func main() {
 	r.HandleFunc("/blog_ind", blog_ind)
 	r.HandleFunc("/details", details)
 	r.HandleFunc("/contact", contact)
+	r.HandleFunc("/reviews", reviews)
 	http.ListenAndServe(":3000", r)
 }
