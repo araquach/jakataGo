@@ -1,0 +1,29 @@
+{{define "content"}}
+
+{{/*Facebook Like code*/}}
+
+<section id="blog">
+
+    <article>
+        <h2>Blog Title</h2>
+
+{{/* loop through paras*/}}
+
+        <div class="blog-pic">
+            <img src="pic" alt="" style="height: 70%; width: 70%;">
+        </div>
+
+{{/* need to add id to jump to right bit on page*/}}
+        <p><a href="/blog" class="back-and-to">Back to all the blogs &gt;</a></p>
+        <p class="author">Blog Author</p>
+        <time datetime="created at">Created at</time>
+
+        <div id="fb-like">
+            <div class="fb-like" data-href="" data-width="250" data-layout="standard" data-action="like" data-size="large" data-show-faces="false" data-share="true"></div>
+        </div>
+
+    </article>
+
+</section>
+
+{{end}}
