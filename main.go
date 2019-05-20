@@ -22,6 +22,12 @@ func main() {
 	r.Handle("/prices", pageC.PricesView).Methods("GET")
 	r.Handle("/recruitment", pageC.RecruitmentView).Methods("GET")
 
+	// Assets
+	assetHandler := http.FileServer(http.Dir("./public/css/"))
+	assetHandler = http.StripPrefix("/public/css/", assetHandler)
+	r.PathPrefix("/public/css/").Handler(assetHandler)
+
+
 	http.ListenAndServe(":8080", r)
 
 }
