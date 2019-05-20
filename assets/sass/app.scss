@@ -1,2 +1,17 @@
+$blue: #343348;
+
+$primary: $blue;
+
 @import "node_modules/bulma/bulma.sass";
 
+body {
+  background: url('/images/main/titanium.jpg') repeat-x left top rgb(81, 86, 95);
+}
+
+.main {
+  background-color: #FFF;
+}
+
+nav {
+  margin-top: 7rem;
+}
