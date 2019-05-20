@@ -1,12 +1,27 @@
 package main
 
 import (
+	"database/sql"
+	_ "github.com/go-sql-driver/mysql"
 	"github.com/gorilla/mux"
 	"jakataGo/controllers"
 	"net/http"
+
 )
 
 func main() {
+	db, err := sql.Open("mysql", "root:password@/jakataGo")
+	if err != nil {
+		panic(err.Error()) // Just for example purpose. You should use proper error handling instead of panic
+	}
+	defer db.Close()
+
+	// Open doesn't open a connection. Validate DSN data:
+	err = db.Ping()
+	if err != nil {
+		panic(err.Error()) // proper error handling instead of panic in your app
+	}
+
 	pageC := controllers.NewPage()
 
 	r := mux.NewRouter()
@@ -35,7 +50,6 @@ func main() {
 	//Images
 	imageHandler := http.FileServer(http.Dir("./public/images/"))
 	r.PathPrefix("/images/").Handler(http.StripPrefix("/images/", imageHandler))
-
 
 	http.ListenAndServe(":8080", r)
 
