@@ -22,5 +22,6 @@ func main() {
 	r.Handle("/prices", pageC.PricesView).Methods("GET")
 	r.Handle("/recruitment", pageC.RecruitmentView).Methods("GET")
 
-	http.ListenAndServe(":2080", r)
+	http.ListenAndServe(":8080", r)
+
 }
