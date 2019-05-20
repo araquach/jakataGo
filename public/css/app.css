@@ -11424,6 +11424,12 @@ nav {
   margin-top: 2rem;
 }
 
+@media screen and (max-width: 768px) {
+  nav {
+    margin-top: 0;
+  }
+}
+
 .social {
   background-color: #343348;
 }
@@ -11433,7 +11439,24 @@ nav {
 }
 
 .footer {
-  padding-bottom: 0;
+  padding-bottom: 3rem;
   background-color: #343348;
+}
+
+.errors {
+  border: 1px solid #ff3860;
+  padding: 1rem;
+  margin: 1rem 0;
+}
+
+.errors p {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.required:after {
+  content: " *";
+  color: #343348;
 }
 

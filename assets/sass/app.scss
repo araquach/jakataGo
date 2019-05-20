@@ -18,6 +18,10 @@ body {
 
 nav {
   margin-top: 2rem;
+
+  @include until($tablet) {
+    margin-top: 0;
+  }
 }
 
 .social {
@@ -29,6 +33,23 @@ nav {
 }
 
 .footer {
-  padding-bottom: 0;
+  padding-bottom: 3rem;
   background-color: $primary;
+}
+
+.errors {
+  border: 1px solid $danger;
+  padding: 1rem;
+  margin: 1rem 0;
+
+  p {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+  }
+}
+
+.required:after {
+  content: " *";
+  color: $primary;
 }

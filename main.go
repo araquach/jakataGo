@@ -22,16 +22,17 @@ func main() {
 	r.Handle("/prices", pageC.PricesView).Methods("GET")
 	r.Handle("/recruitment", pageC.RecruitmentView).Methods("GET")
 
-	// Assets
+	// Styles
 	assetHandler := http.FileServer(http.Dir("./public/css/"))
 	assetHandler = http.StripPrefix("/public/css/", assetHandler)
 	r.PathPrefix("/public/css/").Handler(assetHandler)
 
-	// images
-	//imageHandler := http.FileServer(http.Dir("./public/images/"))
-	//imageHandler = http.StripPrefix("/public/images/", imageHandler)
-	//r.PathPrefix("/").Handler(imageHandler)
+	// JS
+	jsHandler := http.FileServer(http.Dir("./public/js/"))
+	jsHandler = http.StripPrefix("/public/js/", jsHandler)
+	r.PathPrefix("/public/js/").Handler(jsHandler)
 
+	//Images
 	imageHandler := http.FileServer(http.Dir("./public/images/"))
 	r.PathPrefix("/images/").Handler(http.StripPrefix("/images/", imageHandler))
 
