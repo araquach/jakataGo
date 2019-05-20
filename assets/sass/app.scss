@@ -12,6 +12,23 @@ body {
   background-color: #FFF;
 }
 
+.desktop-logo {
+  margin: 3.5rem 0 0 4.5rem;
+}
+
 nav {
-  margin-top: 7rem;
+  margin-top: 2rem;
+}
+
+.social {
+  background-color: $primary;
+
+  .column {
+    text-align: center;
+  }
+}
+
+.footer {
+  padding-bottom: 0;
+  background-color: $primary;
 }
