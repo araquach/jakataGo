@@ -27,6 +27,11 @@ func main() {
 	assetHandler = http.StripPrefix("/public/css/", assetHandler)
 	r.PathPrefix("/public/css/").Handler(assetHandler)
 
+	// Images
+	imageHandler := http.FileServer(http.Dir("./public/images/"))
+	r.PathPrefix("/public/images/").Handler(http.StripPrefix("public/images/", imageHandler))
+
+
 
 	http.ListenAndServe(":8080", r)
 
