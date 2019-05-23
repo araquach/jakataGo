@@ -11416,6 +11416,26 @@ body {
   background-color: #FFF;
 }
 
+.layout {
+  padding-top: 20rem;
+}
+
+@media screen and (max-width: 768px) {
+  .layout {
+    padding-top: 0;
+  }
+}
+
+#header {
+  position: absolute;
+}
+
+@media screen and (max-width: 768px) {
+  #header {
+    position: relative;
+  }
+}
+
 .desktop-logo {
   margin: 3.5rem 0 0 4.5rem;
 }
@@ -11458,5 +11478,25 @@ nav {
 .required:after {
   content: " *";
   color: #343348;
+}
+
+#home {
+  background: url("/images/home/backdrop/essential_look_2018.jpg") no-repeat left top #f5f5f5;
+  background-size: cover;
+}
+
+@media screen and (max-width: 768px) {
+  #home {
+    background: url("") no-repeat left top #f5f5f5;
+  }
+}
+
+#home #feedback-feed-container {
+  height: 12rem;
+}
+
+#home .box {
+  background-color: rgba(255, 255, 255, 0.7);
+  border-radius: 10px;
 }
 
