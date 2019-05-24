@@ -11408,6 +11408,8 @@ label.panel-block:hover {
   padding: 3rem 1.5rem 6rem;
 }
 
+/* Main Styling */
+
 body {
   background: url("/images/main/titanium.jpg") repeat-x left top #51565f;
 }
@@ -11480,6 +11482,8 @@ nav {
   color: #343348;
 }
 
+/* Home Page */
+
 #home {
   background: url("/images/home/backdrop/essential_look_2018.jpg") no-repeat left top #f5f5f5;
   background-size: cover;
@@ -11491,12 +11495,15 @@ nav {
   }
 }
 
-#home #feedback-feed-container {
-  height: 12rem;
+#feedback-feed {
+  position: absolute;
+  bottom: 10rem;
+  right: 3rem;
+  background-color: rgba(66, 66, 89, 0.6);
+  color: #FFF;
 }
 
-#home .box {
-  background-color: rgba(255, 255, 255, 0.7);
-  border-radius: 10px;
+#feedback-feed a {
+  color: #FFF;
 }
 

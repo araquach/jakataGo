@@ -37,6 +37,6 @@ func main() {
 	imageHandler := http.FileServer(http.Dir("./public/images/"))
 	r.PathPrefix("/images/").Handler(http.StripPrefix("/images/", imageHandler))
 
-	http.ListenAndServe(":8070", r)
+	http.ListenAndServe(":8050", r)
 
 }
