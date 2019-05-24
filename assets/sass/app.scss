@@ -15,7 +15,7 @@ body {
 }
 
 .layout {
-  padding-top: 20rem;
+  padding-top: 16rem;
   @include until($tablet) {
     padding-top: 0;
   }
@@ -81,10 +81,19 @@ nav {
   }
 }
 
+#home-news {
+  margin-left: 2rem;
+  .box {
+    border: 1px solid #999;
+    margin-bottom: 2rem;
+    box-shadow: none;
+  }
+}
+
 #feedback-feed {
   position: absolute;
-  bottom:10rem;
-  right: 3rem;
+  bottom:12rem;
+  right: 2rem;
   background-color: rgba(66, 66, 89, .6);
   color: #FFF;
 

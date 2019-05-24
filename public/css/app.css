@@ -11419,7 +11419,7 @@ body {
 }
 
 .layout {
-  padding-top: 20rem;
+  padding-top: 16rem;
 }
 
 @media screen and (max-width: 768px) {
@@ -11495,10 +11495,20 @@ nav {
   }
 }
 
+#home-news {
+  margin-left: 2rem;
+}
+
+#home-news .box {
+  border: 1px solid #999;
+  margin-bottom: 2rem;
+  box-shadow: none;
+}
+
 #feedback-feed {
   position: absolute;
-  bottom: 10rem;
-  right: 3rem;
+  bottom: 12rem;
+  right: 2rem;
   background-color: rgba(66, 66, 89, 0.6);
   color: #FFF;
 }
