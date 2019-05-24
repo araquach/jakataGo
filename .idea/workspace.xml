@@ -2,9 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="caaf754c-1e45-4b71-b046-b2f8314f3d24" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/assets/sass/app.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/sass/app.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/app.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/main.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/pages/blog.gohtml" beforeDir="false" afterPath="$PROJECT_DIR$/views/pages/blog.gohtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/pages/blog_ind.gohtml" beforeDir="false" afterPath="$PROJECT_DIR$/views/pages/blog_ind.gohtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/pages/contact.gohtml" beforeDir="false" afterPath="$PROJECT_DIR$/views/pages/contact.gohtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/pages/details.gohtml" beforeDir="false" afterPath="$PROJECT_DIR$/views/pages/details.gohtml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/views/pages/home.gohtml" beforeDir="false" afterPath="$PROJECT_DIR$/views/pages/home.gohtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/pages/prices.gohtml" beforeDir="false" afterPath="$PROJECT_DIR$/views/pages/prices.gohtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/pages/recruitment.gohtml" beforeDir="false" afterPath="$PROJECT_DIR$/views/pages/recruitment.gohtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/pages/reviews.gohtml" beforeDir="false" afterPath="$PROJECT_DIR$/views/pages/reviews.gohtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/pages/salon.gohtml" beforeDir="false" afterPath="$PROJECT_DIR$/views/pages/salon.gohtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/pages/team.gohtml" beforeDir="false" afterPath="$PROJECT_DIR$/views/pages/team.gohtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/pages/team_ind.gohtml" beforeDir="false" afterPath="$PROJECT_DIR$/views/pages/team_ind.gohtml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -67,38 +77,92 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/views/layouts/main.gohtml">
+        <entry file="file://$PROJECT_DIR$/views/pages/blog.gohtml">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="17" lean-forward="true" selection-start-column="17" selection-end-column="17" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/assets/sass/app.scss">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="189">
-              <caret line="94" column="11" selection-start-line="94" selection-start-column="11" selection-end-line="94" selection-end-column="11" />
+            <state relative-caret-position="30">
+              <caret line="2" column="32" selection-start-line="2" selection-start-column="32" selection-end-line="2" selection-end-column="32" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/views/pages/home.gohtml">
+        <entry file="file://$PROJECT_DIR$/views/pages/blog_ind.gohtml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="215">
-              <caret line="28" column="66" selection-start-line="28" selection-start-column="66" selection-end-line="28" selection-end-column="66" />
-              <folding>
-                <element signature="e#1476#1484#0#HTML" expanded="true" />
-                <element signature="e#2199#2207#0#HTML" expanded="true" />
-                <element signature="e#2837#2845#0#HTML" expanded="true" />
-              </folding>
+            <state relative-caret-position="60">
+              <caret line="4" column="36" selection-start-line="4" selection-start-column="36" selection-end-line="4" selection-end-column="36" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/views/pages/details.gohtml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="30">
+              <caret line="2" column="35" selection-start-line="2" selection-start-column="35" selection-end-line="2" selection-end-column="35" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/views/pages/prices.gohtml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="30">
+              <caret line="2" column="34" selection-start-line="2" selection-start-column="34" selection-end-line="2" selection-end-column="34" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/views/pages/recruitment.gohtml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="30">
+              <caret line="2" column="39" selection-start-line="2" selection-start-column="39" selection-end-line="2" selection-end-column="39" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/views/pages/reviews.gohtml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="30">
+              <caret line="2" column="35" selection-start-line="2" selection-start-column="35" selection-end-line="2" selection-end-column="35" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/views/pages/salon.gohtml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="60">
+              <caret line="4" column="37" selection-start-line="4" selection-start-column="37" selection-end-line="4" selection-end-column="37" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/views/pages/team.gohtml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="45">
+              <caret line="3" column="32" selection-start-line="3" selection-start-column="32" selection-end-line="3" selection-end-column="32" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/views/pages/team_ind.gohtml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="60">
+              <caret line="4" column="28" selection-start-line="4" selection-start-column="28" selection-end-line="4" selection-end-column="28" />
             </state>
           </provider>
         </entry>
       </file>
     </leaf>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>fee</find>
+    </findStrings>
   </component>
   <component name="GOROOT" path="/usr/local/go" />
   <component name="Git.Settings">
@@ -111,24 +175,24 @@
         <option value="$PROJECT_DIR$/public/css/app.css" />
         <option value="$PROJECT_DIR$/assets/js/app.js" />
         <option value="$PROJECT_DIR$/views/layouts/head.gohtml" />
-        <option value="$PROJECT_DIR$/views/pages/blog.gohtml" />
-        <option value="$PROJECT_DIR$/views/pages/blog_ind.gohtml" />
-        <option value="$PROJECT_DIR$/views/pages/prices.gohtml" />
-        <option value="$PROJECT_DIR$/views/pages/recruitment.gohtml" />
-        <option value="$PROJECT_DIR$/views/pages/reviews.gohtml" />
-        <option value="$PROJECT_DIR$/views/pages/team.gohtml" />
-        <option value="$PROJECT_DIR$/views/pages/team_ind.gohtml" />
-        <option value="$PROJECT_DIR$/views/pages/salon.gohtml" />
         <option value="$APPLICATION_CONFIG_DIR$/consoles/db/84653236-9e9d-4bc3-9ffa-5bef929acb03/console.sql" />
         <option value="$APPLICATION_CONFIG_DIR$/consoles/.datagrid/cell" />
-        <option value="$PROJECT_DIR$/views/pages/contact.gohtml" />
-        <option value="$PROJECT_DIR$/views/pages/details.gohtml" />
         <option value="$PROJECT_DIR$/views/layouts/main.gohtml" />
         <option value="$PROJECT_DIR$/views/view.go" />
         <option value="$PROJECT_DIR$/.gitignore" />
-        <option value="$PROJECT_DIR$/main.go" />
         <option value="$PROJECT_DIR$/views/pages/home.gohtml" />
+        <option value="$PROJECT_DIR$/views/pages/contact.gohtml" />
         <option value="$PROJECT_DIR$/assets/sass/app.scss" />
+        <option value="$PROJECT_DIR$/main.go" />
+        <option value="$PROJECT_DIR$/views/pages/blog.gohtml" />
+        <option value="$PROJECT_DIR$/views/pages/blog_ind.gohtml" />
+        <option value="$PROJECT_DIR$/views/pages/details.gohtml" />
+        <option value="$PROJECT_DIR$/views/pages/prices.gohtml" />
+        <option value="$PROJECT_DIR$/views/pages/recruitment.gohtml" />
+        <option value="$PROJECT_DIR$/views/pages/reviews.gohtml" />
+        <option value="$PROJECT_DIR$/views/pages/salon.gohtml" />
+        <option value="$PROJECT_DIR$/views/pages/team.gohtml" />
+        <option value="$PROJECT_DIR$/views/pages/team_ind.gohtml" />
       </list>
     </option>
   </component>
@@ -312,13 +376,13 @@
     <frame x="0" y="23" width="1280" height="746" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.5780591" visible="true" weight="0.20193861" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4978903" visible="true" weight="0.20193861" />
       <window_info id="Structure" order="1" sideWeight="0.41983122" side_tool="true" weight="0.21243942" />
-      <window_info id="npm" order="2" sideWeight="0.42194092" side_tool="true" visible="true" weight="0.20193861" />
+      <window_info id="npm" order="2" sideWeight="0.5021097" side_tool="true" weight="0.20193861" />
       <window_info id="Favorites" order="3" sideWeight="0.41983122" side_tool="true" weight="0.21243942" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49919224" visible="true" weight="0.27522936" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49919224" visible="true" weight="0.27522936" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -373,81 +437,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/pages/blog.gohtml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/pages/blog_ind.gohtml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="337">
-          <caret line="28" column="7" lean-forward="true" selection-start-line="28" selection-start-column="7" selection-end-line="28" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/pages/prices.gohtml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="262">
-          <caret line="49" column="32" selection-start-line="49" selection-start-column="32" selection-end-line="49" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/pages/recruitment.gohtml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="23" column="10" lean-forward="true" selection-start-line="23" selection-start-column="10" selection-end-line="23" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/pages/reviews.gohtml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="22" column="7" lean-forward="true" selection-start-line="22" selection-start-column="7" selection-end-line="22" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/pages/team_ind.gohtml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="157">
-          <caret line="27" column="28" selection-start-line="27" selection-start-column="28" selection-end-line="27" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/4138623d-dfc2-4fbe-8bf3-2a7be483822c/console.sql">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/pages/salon.gohtml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="24" column="14" selection-start-line="24" selection-start-column="14" selection-end-line="24" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/84653236-9e9d-4bc3-9ffa-5bef929acb03/console.sql">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/pages/details.gohtml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="19" lean-forward="true" selection-start-line="19" selection-end-line="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/pages/team.gohtml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="22" selection-start-line="22" selection-end-line="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/pages/contact.gohtml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" selection-start-line="15" selection-end-line="15" />
-        </state>
-      </provider>
     </entry>
     <entry file="das://84653236-9e9d-4bc3-9ffa-5bef929acb03/schema/jakataGo/table/users">
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
@@ -488,6 +482,39 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/views/layouts/main.gohtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-483">
+          <caret column="17" lean-forward="true" selection-start-column="17" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/pages/home.gohtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="145">
+          <caret line="35" column="46" lean-forward="true" selection-start-line="35" selection-start-column="46" selection-end-line="35" selection-end-column="46" />
+          <folding>
+            <element signature="e#1476#1484#0#HTML" expanded="true" />
+            <element signature="e#2199#2207#0#HTML" expanded="true" />
+            <element signature="e#2837#2845#0#HTML" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/pages/contact.gohtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="35" selection-start-line="2" selection-start-column="35" selection-end-line="2" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/sass/app.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="239">
+          <caret line="94" column="11" selection-start-line="94" selection-start-column="11" selection-end-line="94" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/main.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="303">
@@ -498,29 +525,66 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/layouts/main.gohtml">
+    <entry file="file://$PROJECT_DIR$/views/pages/blog.gohtml">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="17" lean-forward="true" selection-start-column="17" selection-end-column="17" />
+        <state relative-caret-position="30">
+          <caret line="2" column="32" selection-start-line="2" selection-start-column="32" selection-end-line="2" selection-end-column="32" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/pages/home.gohtml">
+    <entry file="file://$PROJECT_DIR$/views/pages/blog_ind.gohtml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="215">
-          <caret line="28" column="66" selection-start-line="28" selection-start-column="66" selection-end-line="28" selection-end-column="66" />
-          <folding>
-            <element signature="e#1476#1484#0#HTML" expanded="true" />
-            <element signature="e#2199#2207#0#HTML" expanded="true" />
-            <element signature="e#2837#2845#0#HTML" expanded="true" />
-          </folding>
+        <state relative-caret-position="60">
+          <caret line="4" column="36" selection-start-line="4" selection-start-column="36" selection-end-line="4" selection-end-column="36" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/assets/sass/app.scss">
+    <entry file="file://$PROJECT_DIR$/views/pages/details.gohtml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="189">
-          <caret line="94" column="11" selection-start-line="94" selection-start-column="11" selection-end-line="94" selection-end-column="11" />
+        <state relative-caret-position="30">
+          <caret line="2" column="35" selection-start-line="2" selection-start-column="35" selection-end-line="2" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/pages/prices.gohtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="34" selection-start-line="2" selection-start-column="34" selection-end-line="2" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/pages/recruitment.gohtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="39" selection-start-line="2" selection-start-column="39" selection-end-line="2" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/pages/reviews.gohtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="35" selection-start-line="2" selection-start-column="35" selection-end-line="2" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/pages/salon.gohtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="37" selection-start-line="4" selection-start-column="37" selection-end-line="4" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/pages/team.gohtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" column="32" selection-start-line="3" selection-start-column="32" selection-end-line="3" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/pages/team_ind.gohtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="28" selection-start-line="4" selection-start-column="28" selection-end-line="4" selection-end-column="28" />
         </state>
       </provider>
     </entry>
