@@ -3,8 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="d28c9bbd-37db-4b3d-bf6a-7bdebee3111d" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/main.go" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -20,7 +18,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/main.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="391">
+            <state relative-caret-position="323">
               <caret line="23" column="70" selection-start-line="10" selection-start-column="8" selection-end-line="23" selection-end-column="70" />
               <folding>
                 <element signature="e#14#86#0" expanded="true" />
@@ -32,7 +30,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/controllers/page.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="578">
+            <state relative-caret-position="544">
               <caret line="34" column="1" selection-start-line="34" selection-start-column="1" selection-end-line="34" selection-end-column="1" />
               <folding>
                 <element signature="e#21#49#0" expanded="true" />
@@ -44,7 +42,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/views/view.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="816">
+            <state relative-caret-position="748">
               <caret line="48" column="16" selection-end-line="50" />
               <folding>
                 <element signature="e#15#71#0" expanded="true" />
@@ -53,11 +51,20 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/views/layouts/main.gohtml">
           <provider selected="true" editor-type-id="text-editor">
             <state>
               <caret column="17" selection-end-column="17" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="136">
+              <caret line="8" column="12" lean-forward="true" selection-start-line="8" selection-start-column="12" selection-end-line="8" selection-end-column="12" />
             </state>
           </provider>
         </entry>
@@ -103,8 +110,8 @@
         <option value="$PROJECT_DIR$/controllers/page.go" />
         <option value="$PROJECT_DIR$/views/layouts/head.gohtml" />
         <option value="$PROJECT_DIR$/assets/sass/app.scss" />
-        <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/main.go" />
+        <option value="$PROJECT_DIR$/.gitignore" />
       </list>
     </option>
   </component>
@@ -203,8 +210,9 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="62" y="23" width="1625" height="1018" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49892008" visible="true" weight="0.23752369" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49892008" visible="true" weight="0.24005054" />
       <window_info id="Structure" order="1" sideWeight="0.5010799" side_tool="true" weight="0.22488946" />
       <window_info id="Favorites" order="2" sideWeight="0.5010799" side_tool="true" weight="0.22488946" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -392,16 +400,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="799">
-          <caret line="65" selection-start-line="65" selection-end-line="65" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/main.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
+        <state relative-caret-position="323">
           <caret line="23" column="70" selection-start-line="10" selection-start-column="8" selection-end-line="23" selection-end-column="70" />
           <folding>
             <element signature="e#14#86#0" expanded="true" />
@@ -411,7 +412,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/controllers/page.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="578">
+        <state relative-caret-position="544">
           <caret line="34" column="1" selection-start-line="34" selection-start-column="1" selection-end-line="34" selection-end-column="1" />
           <folding>
             <element signature="e#21#49#0" expanded="true" />
@@ -421,7 +422,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/views/view.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="816">
+        <state relative-caret-position="748">
           <caret line="48" column="16" selection-end-line="50" />
           <folding>
             <element signature="e#15#71#0" expanded="true" />
@@ -433,6 +434,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state>
           <caret column="17" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="12" lean-forward="true" selection-start-line="8" selection-start-column="12" selection-end-line="8" selection-end-column="12" />
         </state>
       </provider>
     </entry>
