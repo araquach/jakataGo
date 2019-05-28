@@ -1,41 +1,78 @@
 {{define "content"}}
 
-<section id="contact" class="layout">
+<div id="contact" class="layout">
 
-    <div>
-        Alert Message
+    <div class="columns section">
+        <div class="column is-6">
+            <div class="is-hidden">
+                Alert Message
+            </div>
+
+            <h1 class="title is-2">Contact Us</h1>
+
+            <p><strong>Please fill in as much information as possible in the form below, we will get back to you as soon as we can.</strong></p>
+            <p>Or use our online booking system</p>
+            <a href="/booking" class="button is-primary">Make an online booking</a>
+            <br>
+            <br>
+
+            <div id="errors" class="has-text-danger is-hidden">
+                <ul>
+                    <li>error list items</li>
+                </ul>
+            </div>
+
+            <form action="sendEmail" class="box">
+
+                <div class="field">
+                    <label class="label">First Name:</label>
+                    <div class="control">
+                        <input type="text" name="first_name" class="input">
+                    </div>
+                </div>
+
+                <div class="field">
+                    <label class="label">Last Name:</label>
+                    <div class="control">
+                        <input type="text" name="second_name" class="input">
+                    </div>
+                </div>
+
+                <div class="field">
+                    <label class="label">Email Address:</label>
+                    <div class="control">
+                        <input type="text" name="email" class="input">
+                    </div>
+                </div>
+
+                <div class="field">
+                    <label class="label">Confirm Email Address:</label>
+                    <div class="control">
+                        <input type="text" name="email_confirm" class="input">
+                    </div>
+                </div>
+
+                <div class="field">
+                    <label class="label">Mobile Number:</label>
+                    <div class="control">
+                        <input type="text" name="mobile" class="input">
+                    </div>
+                </div>
+
+                <div class="field">
+                    <label class="label">Your Message:</label>
+                    <div class="control">
+                        <input type="textarea" name="body" class="textarea">
+                    </div>
+                </div>
+                <div class="field">
+                    <div class="control">
+                        <button class="button is-primary">Submit</button>
+                    </div>
+                </div>
+            </form>
+        </div>
     </div>
-
-    <h1>Contact Us</h1>
-
-    <p>Please fill in as much information as possible in the form below, we will get back to you as soon as we can</p>
-    <a href="/booking">Alternatively, make an online booking here &gt;</a>
-
-
-    <div>
-
-        <ul>
-            <li>error list items</li>
-        </ul>
-
-        <form action="sendEmail">
-            <p>First Name:</p>
-            <input type="text" name="first_name">
-            <p>Last Name:</p>
-            <input type="text" name="second_name">
-            <p>Email Address:</p>
-            <input type="text" name="email">
-            <p>Confirm Email Address:</p>
-            <input type="text" name="email_confirm">
-            <p>Mobile Number:</p>
-            <input type="text" name="mobile">
-            Your Message:
-            <input type="text" name="body">
-            <input type="submit" name="" class="button">
-        </form>
-    </div>
-
-
-</section>
+</div>
 
 {{end}}

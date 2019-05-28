@@ -11419,7 +11419,7 @@ body {
 }
 
 .layout {
-  padding-top: 16rem;
+  padding-top: 14rem;
 }
 
 @media screen and (max-width: 768px) {
@@ -11537,7 +11537,7 @@ nav {
 
 /* Contact Page */
 
-#details {
+#contact {
   background: url("/images/contact/dark_angel.jpg") no-repeat left top #f5f5f5;
   background-size: cover;
 }
