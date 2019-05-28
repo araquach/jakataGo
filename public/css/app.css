@@ -11542,3 +11542,10 @@ nav {
   background-size: cover;
 }
 
+/* Blog Page */
+
+#blog .columns {
+  margin-top: 2rem;
+  border-radius: 0;
+}
+

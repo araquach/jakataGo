@@ -128,3 +128,12 @@ nav {
   background: url('/images/contact/dark_angel.jpg') no-repeat left top #f5f5f5;
   background-size: cover;
 }
+
+/* Blog Page */
+
+#blog {
+  .columns {
+    margin-top: 2rem;
+    border-radius: 0;
+  }
+}
