@@ -9,7 +9,7 @@ func NewPage() *Page {
 		HomeView: views.NewView("main", "views/pages/home.gohtml"),
 		ContactView: views.NewView("main", "views/pages/contact.gohtml"),
 		BlogView: views.NewView("main", "views/pages/blog.gohtml"),
-		BlogIndView: views.NewView("main", "views/pages/blog.gohtml"),
+		BlogIndView: views.NewView("main", "views/pages/blog_ind.gohtml"),
 		DetailsView: views.NewView("main", "views/pages/details.gohtml"),
 		PricesView: views.NewView("main", "views/pages/prices.gohtml"),
 		RecruitmentView: views.NewView("main", "views/pages/recruitment.gohtml"),

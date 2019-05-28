@@ -2,28 +2,27 @@
 
 {{/*Facebook Like code*/}}
 
-<section id="blog_ind" class="layout">
-
-    <article>
-        <h2>Blog Title</h2>
-
-{{/* loop through paras*/}}
-
-        <div>
-            <img src="pic" alt="" style="height: 70%; width: 70%;">
+<div id="blog" class="layout section box is-size-5-mobile">
+    <h2 class="title is-3">Title</h2>
+    <article class="columns">
+        <div class="column is-4">
+{{/* Loop through the images */}}
+            <figure class="image has-margin-5">
+                <img src="http://via.placeholder.com/1000x1000" alt="">
+            </figure>
         </div>
+        <div class="column section">
+{{/* loop through the paras */}}
+            <p><a href="/blog #slug" class="button is-primary">Back to all the blogs</a></p>
+            <div class="publish-info">
+                <small>Published by Author</small>
+                <time datetime="">Created at time</time>
+            </div>
 
-{{/* need to add id to jump to right bit on page*/}}
-        <p><a href="/blog">Back to all the blogs &gt;</a></p>
-        <p>Blog Author</p>
-        <time datetime="created at">Created at</time>
-
-        <div id="fb-like">
-            <div class="fb-like" data-href="" data-width="250" data-layout="standard" data-action="like" data-size="large" data-show-faces="false" data-share="true"></div>
+{{/* fb Like */}}
         </div>
-
     </article>
 
-</section>
+</div>
 
 {{end}}
