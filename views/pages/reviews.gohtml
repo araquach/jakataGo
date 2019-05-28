@@ -1,23 +1,39 @@
 {{define "content"}}
 
-<section id="reviews" class="layout">
+<div id="reviews" class="layout">
+    <div class="columns section">
+        <div class="column is-8">
+            <h2 class="title is-3 has-text-primary">Some of our recent client reviews</h2>
+            <h3 class="subtitle is-5 has-text-primary">Filter by stylist</h3>
+            <div class="columns is-multiline is-mobile">
+{{/* loop through team members */}}
+                <div class="column is-2-desktop is-2-tablet is-3-mobile">
+                    <a href="#">
+                        <div class="card">
+                            <div class="card-image">
+                                <figure class="image is-small">
+                                    <img src="" alt="">
+                                </figure>
+                            </div>
+                            <div class="card content has-background-primary">
+                                <div class="content has-text-white">
+                                    review link
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
 
-    <h1>Some of our recent client reviews</h1>
+            </div>
 
-    <h3>Filter by stylist</h3>
-
-    <ul class="stylist-filter">
-
-        <a href="/reviews-teamMember/"><li>Team member Link</li></a>
-
-    </ul>
-
-{{/*    Loop through the reviews*/}}
-    <div>
-        <p>"Review Text"</p>
-        <small>Client Name</small><br>
-        <small>Hair by: {Staff Name</small>
+{{/* loop through reviews */}}
+            <div class="box">
+                <p class="is-size-5">"review"</p>
+                <small>Client name</small><br>
+                <small>Hair by: Staff name</small>
+            </div>
+        </div>
     </div>
-</section>
+</div>
 
 {{end}}
