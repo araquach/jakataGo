@@ -11,7 +11,7 @@ func NewPage() *Page {
 		BlogView: views.NewView("main", "views/pages/blog.gohtml"),
 		BlogIndView: views.NewView("main", "views/pages/blog_ind.gohtml"),
 		DetailsView: views.NewView("main", "views/pages/details.gohtml"),
-		PricesView: views.NewView("main", "views/pages/prices.gohtml"),
+		// PricesView: views.NewView("main", "views/pages/prices.gohtml"),
 		RecruitmentView: views.NewView("main", "views/pages/recruitment.gohtml"),
 		ReviewsView: views.NewView("main", "views/pages/reviews.gohtml"),
 		SalonView: views.NewView("main", "views/pages/salon.gohtml"),
@@ -26,7 +26,7 @@ type Page struct {
 	BlogView *views.View
 	BlogIndView *views.View
 	DetailsView *views.View
-	PricesView *views.View
+	// PricesView *views.View
 	RecruitmentView *views.View
 	ReviewsView *views.View
 	SalonView *views.View
