@@ -11428,6 +11428,10 @@ body {
   }
 }
 
+p {
+  margin-bottom: 1.4rem;
+}
+
 #header {
   position: absolute;
 }
@@ -11444,6 +11448,7 @@ body {
 
 nav {
   margin-top: 2rem;
+  padding-left: 2rem;
 }
 
 @media screen and (max-width: 768px) {
@@ -11522,5 +11527,11 @@ nav {
 #recruitment {
   background: url("/images/recruitment/vlada.jpg") no-repeat left top #f5f5f5;
   background-size: cover;
+}
+
+/* Team Page */
+
+#team .card {
+  padding: 1rem 1rem 0 1rem;
 }
 
