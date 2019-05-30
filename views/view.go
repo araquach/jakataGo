@@ -43,11 +43,11 @@ type View struct {
 
 func (v *View) Render(w http.ResponseWriter, data interface{}) error {
 
-	r1 := Review{
-		"Wonderful experience, love my hair",
-		"Anna Alexander",
-		"Adam",
-	}
+	//r1 := Review{
+	//	"Wonderful experience, love my hair",
+	//	"Anna Alexander",
+	//	"Adam",
+	//}
 
 	b1 := Blog{
 		"Blog Post One",
@@ -65,9 +65,11 @@ func (v *View) Render(w http.ResponseWriter, data interface{}) error {
 		"Matt",
 	}
 
+	blogs := []Blog{b1, b2, b3}
+
 
 	w.Header().Set("Content-Type", "text/html")
-	return v.Template.ExecuteTemplate(w, v.Layout, "Adam")
+	return v.Template.ExecuteTemplate(w, v.Layout, blogs)
 }
 
 func (v *View) ServeHTTP(w http.ResponseWriter, r *http.Request) {

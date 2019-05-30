@@ -1,3 +1,9 @@
+import Vue from "vue";
+
+const app = new Vue({
+    el: '#app'
+});
+
 // Bulma NavBar Burger Script
 document.addEventListener('DOMContentLoaded', function () {
     // Get all "navbar-burger" elements
