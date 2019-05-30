@@ -15,10 +15,14 @@ body {
 }
 
 .layout {
-  padding-top: 16rem;
+  padding-top: 14rem;
   @include until($tablet) {
     padding-top: 0;
   }
+}
+
+p {
+  margin-bottom: 1.4rem;
 }
 
 #header {
@@ -34,6 +38,7 @@ body {
 
 nav {
   margin-top: 2rem;
+  padding-left: 2rem;
 
   @include until($tablet) {
     margin-top: 0;
@@ -99,5 +104,36 @@ nav {
 
   a {
     color: #FFF;
+  }
+}
+
+/* Recruitment Page */
+
+#recruitment {
+  background: url('/images/recruitment/vlada.jpg') no-repeat left top #f5f5f5;
+  background-size: cover;
+}
+
+/* Team Page */
+
+#team {
+  .card {
+    padding: 1rem 1rem 0 1rem;
+  }
+}
+
+/* Contact Page */
+
+#contact {
+  background: url('/images/contact/dark_angel.jpg') no-repeat left top #f5f5f5;
+  background-size: cover;
+}
+
+/* Blog Page */
+
+#blog {
+  .columns {
+    margin-top: 2rem;
+    border-radius: 0;
   }
 }

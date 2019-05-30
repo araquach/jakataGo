@@ -1,20 +1,55 @@
 {{define "content"}}
 
-<section id="blog" class="layout">
+<section id="blog" class="layout section">
 
 {{/* loop through blogs*/}}
-    <article>
-        <a id="blog-slug" class="anchor"></a>
-        <h2>Blog Title</h2>
-        <div>
-            <img src="blog pic first" alt="">
+    <div class="columns box has-margin-3">
+        <a id="slug" class="anchor"></a>
+        <div class="column is-5">
+            <figure class="image">
+                <img src="http://via.placeholder.com/1000x1000" alt="">
+            </figure>
         </div>
+        <div class="column">
+            <h2 class="title is-4">Blog Title</h2>
+            <p>First Para</p>
+            <p><a href="link-to-blog" class="button is-primary">Read more &gt;</a></p>
+            <small class="is-size-7">Published by Author</small><br>
+            <time class="is-size-7">Created at Date</time>
+        </div>
+    </div>
 
-        <p>Blog first para</p>
-        <p><a href="/blog/slug" class="back-and-to">Read more &gt;</a></p>
-        <p class="author">Published by blog author</p>
-        <time datetime="">Blog created at</time>
-    </article>
+    <div class="columns box has-margin-3">
+        <a id="slug" class="anchor"></a>
+        <div class="column is-5">
+            <figure class="image">
+                <img src="http://via.placeholder.com/1000x1000" alt="">
+            </figure>
+        </div>
+        <div class="column">
+            <h2 class="title is-4">Blog Title</h2>
+            <p>First Para</p>
+            <p><a href="link-to-blog" class="button is-primary">Read more &gt;</a></p>
+            <small class="is-size-7">Published by Author</small>
+            <time class="is-size-7">Created at Date</time>
+        </div>
+    </div>
+
+    <div class="columns box has-margin-3">
+        <a id="slug" class="anchor"></a>
+        <div class="column is-5">
+            <figure class="image">
+                <img src="http://via.placeholder.com/1000x1000" alt="">
+            </figure>
+        </div>
+        <div class="column">
+            <h2 class="title is-4">Blog Title</h2>
+            <p>First Para</p>
+            <p><a href="link-to-blog" class="button is-primary">Read more &gt;</a></p>
+            <small class="is-size-7">Published by Author</small>
+            <time class="is-size-7">Created at Date</time>
+        </div>
+    </div>
 
 </section>
 
