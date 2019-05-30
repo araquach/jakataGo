@@ -9,7 +9,7 @@ import (
 const (
 	user = "root"
 	password = "password"
-	dbname = "adsTest"
+	dbname = "jakataGo"
 )
 
 type User struct {
