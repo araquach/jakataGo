@@ -7,7 +7,6 @@ import (
 )
 
 func main() {
-
 		pageC := controllers.NewPage()
 
 		r := mux.NewRouter()
