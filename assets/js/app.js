@@ -1,5 +1,14 @@
 import Vue from "vue";
 
+window.axios = require('axios');
+
+window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
+
+import TestComponent from './components/TestComponent.vue';
+
+Vue.component('test-component', TestComponent);
+
+
 const app = new Vue({
     el: '#app'
 });
