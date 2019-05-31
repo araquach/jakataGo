@@ -97,12 +97,23 @@ nav {
 
 #feedback-feed {
   position: absolute;
+  width: 18rem;
   bottom:12rem;
   right: 2rem;
   background-color: rgba(66, 66, 89, .6);
   color: #FFF;
 
+  p {
+    font-size: .7rem;
+    margin-bottom: .5rem;
+
+    &:last-of-type {
+      font-size: .5rem;
+    }
+  }
+
   a {
+    font-size: .8rem;
     color: #FFF;
   }
 }

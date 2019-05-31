@@ -2173,11 +2173,10 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
-      review: "Had a great experience - thenks",
+      review: "Had a great experience - thanks very much, I will be coming back",
       stylist: "Nat",
       client: "Anna Alexander"
     };
@@ -2776,15 +2775,9 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "box", attrs: { id: "feedback-feed" } }, [
-    _c("ul", [
-      _c("li", [
-        _vm._v('"' + _vm._s(_vm.review) + '"'),
-        _c("br"),
-        _c("span", [
-          _vm._v(_vm._s(_vm.client) + " - hair by " + _vm._s(_vm.stylist))
-        ])
-      ])
-    ]),
+    _c("p", [_vm._v('"' + _vm._s(_vm.review) + '"')]),
+    _vm._v(" "),
+    _c("p", [_vm._v(_vm._s(_vm.client) + " - hair by " + _vm._s(_vm.stylist))]),
     _vm._v(" "),
     _c("a", { attrs: { href: "/reviews" } }, [_vm._v("More reviews here")])
   ])

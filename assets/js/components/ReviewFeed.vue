@@ -1,8 +1,7 @@
 <template>
     <div id="feedback-feed" class="box">
-        <ul>
-            <li>&quot;{{review}}&quot;<br><span>{{client}} - hair by {{stylist}}</span></li>
-        </ul>
+        <p>&quot;{{review}}&quot;</p>
+        <p>{{client}} - hair by {{stylist}}</p>
         <a href="/reviews">More reviews here</a>
     </div>
 </template>
@@ -12,7 +11,7 @@
 
         data() {
             return {
-                review: "Had a great experience - thenks",
+                review: "Had a great experience - thanks very much, I will be coming back",
                 stylist: "Nat",
                 client: "Anna Alexander"
             }
