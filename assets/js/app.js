@@ -1,7 +1,7 @@
 import Vue from "vue";
-import NewsFeed from './components/NewsFeed.vue';
-import NewsItem from './components/NewsItem.vue';
-import ReviewFeed from './components/ReviewFeed.vue';
+// import NewsFeed from './components/NewsFeed.vue';
+// import NewsItem from './components/NewsItem.vue';
+// import ReviewFeed from './components/ReviewFeed.vue';
 import BlogPosts from './components/BlogPosts.vue';
 import BlogPost from './components/BlogPost.vue';
 
@@ -11,9 +11,9 @@ window.axios = require('axios');
 
 window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 
-Vue.component('news-item', NewsItem);
-Vue.component('news-feed', NewsFeed);
-Vue.component('review-feed', ReviewFeed);
+// Vue.component('news-item', NewsItem);
+// Vue.component('news-feed', NewsFeed);
+// Vue.component('review-feed', ReviewFeed);
 Vue.component('blog-posts', BlogPosts);
 Vue.component('blog-post', BlogPost);
 

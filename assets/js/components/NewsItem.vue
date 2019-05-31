@@ -1,17 +1,21 @@
 <template>
-    <a href="/blog">
-        <div class="box columns is-paddingless">
-            <div class="column is-4 is-paddingless">
-                <figure class="image">
-                    <img src="http://via.placeholder.com/1000x1000" alt="Image 1">
-                </figure>
-            </div>
-            <div class="column">
-                <h3 class="title is-4 has-text-primary">{{title}}</h3>
-                <p class="is-size-6">{{para}}</p>
-            </div>
+    <div>
+        <div v-for="(newsItem, index) in newsItems">
+            <a href="{{newsItem.Link}}">
+                <div class="box columns is-paddingless">
+                    <div class="column is-4 is-paddingless">
+                        <figure class="image">
+                            <img src="{{ newsItem.Img}}0" alt="{{newsItem.Alt}}">
+                        </figure>
+                    </div>
+                    <div class="column">
+                        <h3 class="title is-4 has-text-primary">{{newsItem.Title}}</h3>
+                        <p>{{newsItem.Para}}</p>
+                    </div>
+                </div>
+            </a>
         </div>
-    </a>
+    </div>
 </template>
 
 <script>
@@ -19,9 +23,12 @@
 
         data() {
             return {
-                title: "Blog Post Title is cool",
-                para: "This is the cool blog posts paragraph"
+                newsItems: []
             }
+        },
+
+        mounted() {
+            axios.get('/api/newsItems').then(response => this.newsItems = response.data);
         }
     }
 </script>

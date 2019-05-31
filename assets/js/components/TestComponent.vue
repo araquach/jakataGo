@@ -1,5 +1,7 @@
 <template>
-    <h1>{{ message }}</h1>
+    <div>
+        <h1 v-for="(review, index) in reviews">{{review.Review}}</h1>
+    </div>
 </template>
 
 <script>
@@ -7,12 +9,12 @@
 
         data() {
             return {
-                message: "Hello from Vue"
+                reviews: []
             }
+        },
+
+        mounted() {
+            axios.get('/api/reviews').then(response => this.reviews = response.data);
         }
     }
-
-    // mounted() {
-    //     axios.get('/staffall').then(response => this.employees = response.data);
-    // }
 </script>

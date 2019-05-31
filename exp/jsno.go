@@ -46,8 +46,6 @@ func mshl(w http.ResponseWriter, r *http.Request) {
 		log.Println(err)
 	}
 	w.Write(json)
-
-
 }
 
 func encd(w http.ResponseWriter, r *http.Request) {
