@@ -5,6 +5,8 @@ import ReviewFeed from './components/ReviewFeed.vue';
 import BlogPosts from './components/BlogPosts.vue';
 import BlogPost from './components/BlogPost.vue';
 
+import TestComponent from './components/TestComponent.vue';
+
 window.axios = require('axios');
 
 window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
@@ -14,6 +16,8 @@ Vue.component('news-feed', NewsFeed);
 Vue.component('review-feed', ReviewFeed);
 Vue.component('blog-posts', BlogPosts);
 Vue.component('blog-post', BlogPost);
+
+Vue.component('test-component', TestComponent);
 
 
 const app = new Vue({

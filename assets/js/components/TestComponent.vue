@@ -11,4 +11,8 @@
             }
         }
     }
+
+    // mounted() {
+    //     axios.get('/staffall').then(response => this.employees = response.data);
+    // }
 </script>
