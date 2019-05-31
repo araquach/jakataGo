@@ -4,9 +4,12 @@ window.axios = require('axios');
 
 window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 
-import TestComponent from './components/TestComponent.vue';
+import NewsFeed from './components/NewsFeed.vue';
+import NewsItem from './components/NewsItem.vue';
 
-Vue.component('test-component', TestComponent);
+
+Vue.component('news-item', NewsItem);
+Vue.component('news-feed', NewsFeed);
 
 
 const app = new Vue({
