@@ -1,16 +1,15 @@
 import Vue from "vue";
+import NewsFeed from './components/NewsFeed.vue';
+import NewsItem from './components/NewsItem.vue';
+import ReviewFeed from './components/ReviewFeed.vue';
 
 window.axios = require('axios');
 
 window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 
-import NewsFeed from './components/NewsFeed.vue';
-import NewsItem from './components/NewsItem.vue';
-
-
 Vue.component('news-item', NewsItem);
 Vue.component('news-feed', NewsFeed);
-
+Vue.component('review-feed', ReviewFeed);
 
 const app = new Vue({
     el: '#app'
