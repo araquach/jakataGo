@@ -11,14 +11,8 @@ let mix = require('laravel-mix');
  |
  */
 
-// mix.js('src/app.js', 'dist/').sass('src/app.scss', 'dist/');
+mix.js('assets/js/app.js', 'public/js');
 
 mix.sass('assets/sass/app.scss', 'public/css', {
-    implementation: require('node-sass')
-});
-
-mix.scripts([
-    'assets/js/app.js'
-], 'public/js/app.js');
-
-// mix.js('assets/js/app.js', 'public/js/app.js');
+     implementation: require('node-sass')
+     });

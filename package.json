@@ -1,7 +1,7 @@
 {
   "name": "jakatago",
   "version": "1.0.0",
-  "description": "",
+  "description": "A practice setup for the new Jakata site",
   "main": "index.js",
   "dependencies": {
     "bulma": "^0.7.5",
