@@ -7,3 +7,6 @@
         ></blog-post>
     </div>
 </template>
+<script>
+
+</script>

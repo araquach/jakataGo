@@ -2,10 +2,14 @@ import Vue from "vue";
 // import NewsFeed from './components/NewsFeed.vue';
 // import NewsItem from './components/NewsItem.vue';
 // import ReviewFeed from './components/ReviewFeed.vue';
-import BlogPosts from './components/BlogPosts.vue';
-import BlogPost from './components/BlogPost.vue';
+// import BlogPosts from './components/BlogPosts.vue';
+// import BlogPost from './components/BlogPost.vue';
 
-import TestComponent from './components/TestComponent.vue';
+import TaskList from './components/TaskList.vue';
+import TaskInd from './components/TaskInd.vue';
+
+
+import TestComponent from './components/TaskList.vue';
 
 window.axios = require('axios');
 
@@ -14,10 +18,11 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 // Vue.component('news-item', NewsItem);
 // Vue.component('news-feed', NewsFeed);
 // Vue.component('review-feed', ReviewFeed);
-Vue.component('blog-posts', BlogPosts);
-Vue.component('blog-post', BlogPost);
+// Vue.component('blog-posts', BlogPosts);
+// Vue.component('blog-post', BlogPost);
 
-Vue.component('test-component', TestComponent);
+Vue.component('task-list', TaskList);
+Vue.component('task-ind', TaskInd);
 
 
 const app = new Vue({

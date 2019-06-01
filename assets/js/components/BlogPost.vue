@@ -22,6 +22,8 @@
 
     export default {
 
+        props:
+
         data() {
             return {
                 blogPosts: []
