@@ -1,6 +1,6 @@
 <template>
     <div>
-        <div class="columns box has-margin-3">
+        <div v-for="(blog, index) in blogPosts" class="columns box has-margin-3">
             <a :id="blog.Slug" class="anchor"></a>
             <div class="column is-5">
                 <figure class="image">
@@ -22,8 +22,6 @@
 
     export default {
 
-        props:
-
         data() {
             return {
                 blogPosts: []
@@ -31,7 +29,7 @@
         },
 
         mounted() {
-            axios.get('/api/blogs').then(response => this.blogs = response.data);
+            axios.get('/api/blogs').then(response => this.blogPosts = response.data);
         }
     }
 </script>
