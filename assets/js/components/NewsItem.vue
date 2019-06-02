@@ -1,11 +1,11 @@
 <template>
     <div>
         <div v-for="(newsItem, index) in newsItems">
-            <a href="{{newsItem.Link}}">
+            <a :href="newsItem.Link">
                 <div class="box columns is-paddingless">
                     <div class="column is-4 is-paddingless">
                         <figure class="image">
-                            <img src="{{ newsItem.Img}}0" alt="{{newsItem.Alt}}">
+                            <img :src="newsItem.Img" :alt="newsItem.Alt">
                         </figure>
                     </div>
                     <div class="column">
@@ -28,7 +28,7 @@
         },
 
         mounted() {
-            axios.get('/api/newsItems').then(response => this.newsItems = response.data);
+            axios.get('/api/blogs').then(response => this.newsItems = response.data);
         }
     }
 </script>

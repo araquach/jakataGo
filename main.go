@@ -19,9 +19,26 @@ type BlogPost struct {
 	Img string
 	Alt string
 	Title string
-	Paras []string
+	Para []string
 	Link string
 	Author string
+}
+
+type TeamMember struct {
+	Fname string
+	Lname string
+	Image string
+	Level int
+	Salon int
+	Para1 string
+	Para2 string
+	Para3 string
+	FavStyle string
+	FavProduct string
+	Price int
+	ReviewLink string
+	Class string
+	Position int
 }
 
 func main() {
@@ -41,6 +58,7 @@ func main() {
 		r.Handle("/recruitment", pageC.RecruitmentView).Methods("GET")
 		r.HandleFunc("/api/reviews", reviews).Methods("GET")
 		r.HandleFunc("/api/blogs", blogs).Methods("GET")
+		r.HandleFunc("/api/team", team).Methods("GET")
 
 
 	// Styles
@@ -86,7 +104,7 @@ func blogs(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Content-Type", "application/json")
 	b1 := BlogPost{
 		"blog-one",
-		"/blog/1",
+		"http://via.placeholder.com/1000x1000",
 		"blog 1 pic",
 		"Blog Post One",
 		[]string{"First para of Blog 1", "Second Para of Blog 1", "Third Para of Blog One"},
@@ -95,7 +113,7 @@ func blogs(w http.ResponseWriter, r *http.Request) {
 	}
 	b2 := BlogPost{
 		"blog-two",
-		"/blog/2",
+		"http://via.placeholder.com/1000x1000",
 		"blog 2 pic",
 		"Blog Post Two",
 		[]string{"First para of Blog 2", "Second Para of Blog 2", "Third Para of Blog Two"},
@@ -104,7 +122,7 @@ func blogs(w http.ResponseWriter, r *http.Request) {
 	}
 	b3 := BlogPost{
 		"blog-three",
-		"/blog/3",
+		"http://via.placeholder.com/1000x1000",
 		"blog 3 pic",
 		"Blog Post Three",
 		[]string{"First para of Blog 3", "Second Para of Blog 3", "Third Para of Blog Three"},
@@ -115,6 +133,67 @@ func blogs(w http.ResponseWriter, r *http.Request) {
 	blogs := []BlogPost{b1, b2, b3}
 
 	json, err := json.Marshal(blogs)
+	if err != nil {
+		log.Println(err)
+	}
+	w.Write(json)
+}
+
+func team(w http.ResponseWriter, r *http.Request) {
+	w.Header().Set("Content-Type", "application/json")
+
+	t1 := TeamMember{
+		"Adam",
+		"Carter",
+		"http://via.placeholder.com/1000x1000",
+		1,
+		1,
+		"Adam is a great stylist",
+		"He's the owner",
+		"Make sure you book in!",
+		"Short Bobs",
+		"Anti Gravity",
+		150,
+		"/reviews/adam",
+		"adam",
+		1,
+	}
+	t2 := TeamMember{
+		"Jimmy",
+		"Sharpe",
+		"http://via.placeholder.com/1000x1000",
+		1,
+		1,
+		"Jim is a great stylist",
+		"He's the manager",
+		"He's a great stylist!",
+		"Bold short cuts",
+		"Mess Up",
+		140,
+		"/reviews/jimmy",
+		"jimmy",
+		2,
+	}
+	t3 := TeamMember{
+		"Natalie",
+		"Doxey",
+		"http://via.placeholder.com/1000x1000",
+		3,
+		1,
+		"Nat is a great stylist",
+		"She's freelance",
+		"She's great at extensions",
+		"Crazy Colours",
+		"Blow Me",
+		140,
+		"/reviews/nat",
+		"nat",
+		3,
+	}
+
+	team := []TeamMember{t1, t2, t3}
+
+	json, err := json.Marshal(team)
 	if err != nil {
 		log.Println(err)
 	}
