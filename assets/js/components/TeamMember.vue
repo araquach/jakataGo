@@ -10,7 +10,7 @@
                         <div class="media">
                             <div class="media-content">
                                 <p class="title is-4 has-text-primary">{{tm.Fname}} {{tm.Lname}}</p>
-                                <p class="subtitle has-text-primary">{{tm.level}}</p>
+                                <p class="subtitle has-text-primary">{{tm.Level}}</p>
                             </div>
                         </div>
                     </div>
@@ -26,27 +26,6 @@
         data() {
             return {
                 TeamMembers: []
-            }
-        },
-
-        methods: {
-
-            level(){
-                switch(this.TeamMember.level) {
-                    case 1:
-                        "Director";
-                        break;
-                    case 2:
-                        "Senior Stylist";
-                        break;
-                    case 3:
-                        "Stylist";
-                        break;
-                    default:
-                        "Stylist";
-                }
-
-                return;
             }
         },
 

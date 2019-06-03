@@ -3,6 +3,7 @@ import NewsItem from './components/NewsItem.vue';
 import ReviewFeed from './components/ReviewFeed.vue';
 import BlogPost from './components/BlogPost.vue';
 import TeamMember from './components/TeamMember.vue';
+import TeamMemberInd from './components/TeamMemberInd';
 
 window.axios = require('axios');
 
@@ -12,6 +13,7 @@ Vue.component('news-item', NewsItem);
 Vue.component('review-feed', ReviewFeed);
 Vue.component('blog-post', BlogPost);
 Vue.component('team-member', TeamMember);
+Vue.component('team-ind', TeamMemberInd);
 
 
 

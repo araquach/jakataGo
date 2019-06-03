@@ -28,7 +28,7 @@ type TeamMember struct {
 	Fname string
 	Lname string
 	Image string
-	Level int
+	Level string
 	Salon int
 	Para1 string
 	Para2 string
@@ -146,7 +146,7 @@ func team(w http.ResponseWriter, r *http.Request) {
 		"Adam",
 		"Carter",
 		"http://via.placeholder.com/1000x1000",
-		1,
+		"Director",
 		1,
 		"Adam is a great stylist",
 		"He's the owner",
@@ -162,7 +162,7 @@ func team(w http.ResponseWriter, r *http.Request) {
 		"Jimmy",
 		"Sharpe",
 		"http://via.placeholder.com/1000x1000",
-		1,
+		"Director",
 		1,
 		"Jim is a great stylist",
 		"He's the manager",
@@ -178,7 +178,7 @@ func team(w http.ResponseWriter, r *http.Request) {
 		"Natalie",
 		"Doxey",
 		"http://via.placeholder.com/1000x1000",
-		3,
+		"Freelance Senior Stylist",
 		1,
 		"Nat is a great stylist",
 		"She's freelance",
