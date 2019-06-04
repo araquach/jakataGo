@@ -5,8 +5,9 @@ import BlogPost from './components/BlogPost.vue';
 import TeamMember from './components/TeamMember.vue';
 import TeamMemberInd from './components/TeamMemberInd';
 
-window.axios = require('axios');
+import PracticeComponent from './components/PracticeComponent';
 
+window.axios = require('axios');
 window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 
 Vue.component('news-item', NewsItem);
@@ -14,6 +15,8 @@ Vue.component('review-feed', ReviewFeed);
 Vue.component('blog-post', BlogPost);
 Vue.component('team-member', TeamMember);
 Vue.component('team-ind', TeamMemberInd);
+
+Vue.component('practice-component', PracticeComponent);
 
 
 
