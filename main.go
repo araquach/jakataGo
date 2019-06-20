@@ -75,8 +75,16 @@ func main() {
 	imageHandler := http.FileServer(http.Dir("./public/images/"))
 	r.PathPrefix("/images/").Handler(http.StripPrefix("/images/", imageHandler))
 
+
+	http.HandleFunc("/favicon.ico", faviconHandler)
+
+
 	http.ListenAndServe(":5090", r)
 
+}
+
+func faviconHandler(w http.ResponseWriter, r *http.Request) {
+	http.ServeFile(w, r, "/public/images/favicon.ico")
 }
 
 func reviews(w http.ResponseWriter, r *http.Request) {
