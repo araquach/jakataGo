@@ -6,6 +6,7 @@ import (
 	"jakataGo/controllers"
 	"log"
 	"net/http"
+	"os"
 )
 
 type Review struct {
@@ -42,23 +43,29 @@ type TeamMember struct {
 }
 
 func main() {
-		pageC := controllers.NewPage()
 
-		r := mux.NewRouter()
-		r.Handle("/", pageC.HomeView).Methods("GET")
-		r.Handle("/team", pageC.TeamView).Methods("GET")
-		r.Handle("/team_ind", pageC.TeamIndView).Methods("GET")
-		r.Handle("/blog", pageC.BlogView).Methods("GET")
-		r.Handle("/blog_ind", pageC.BlogIndView).Methods("GET")
-		r.Handle("/details", pageC.DetailsView).Methods("GET")
-		r.Handle("/contact", pageC.ContactView).Methods("GET")
-		r.Handle("/reviews", pageC.ReviewsView).Methods("GET")
-		r.Handle("/salon", pageC.SalonView).Methods("GET")
-		// r.Handle("/prices", pageC.PricesView).Methods("GET")
-		r.Handle("/recruitment", pageC.RecruitmentView).Methods("GET")
-		r.HandleFunc("/api/reviews", reviews).Methods("GET")
-		r.HandleFunc("/api/blogs", blogs).Methods("GET")
-		r.HandleFunc("/api/team", team).Methods("GET")
+	port := os.Getenv("PORT")
+	if port == "" {
+		log.Fatal("$PORT must be set")
+	}
+
+	pageC := controllers.NewPage()
+
+	r := mux.NewRouter()
+	r.Handle("/", pageC.HomeView).Methods("GET")
+	r.Handle("/team", pageC.TeamView).Methods("GET")
+	r.Handle("/team_ind", pageC.TeamIndView).Methods("GET")
+	r.Handle("/blog", pageC.BlogView).Methods("GET")
+	r.Handle("/blog_ind", pageC.BlogIndView).Methods("GET")
+	r.Handle("/details", pageC.DetailsView).Methods("GET")
+	r.Handle("/contact", pageC.ContactView).Methods("GET")
+	r.Handle("/reviews", pageC.ReviewsView).Methods("GET")
+	r.Handle("/salon", pageC.SalonView).Methods("GET")
+	// r.Handle("/prices", pageC.PricesView).Methods("GET")
+	r.Handle("/recruitment", pageC.RecruitmentView).Methods("GET")
+	r.HandleFunc("/api/reviews", reviews).Methods("GET")
+	r.HandleFunc("/api/blogs", blogs).Methods("GET")
+	r.HandleFunc("/api/team", team).Methods("GET")
 
 
 	// Styles
@@ -79,7 +86,7 @@ func main() {
 	http.HandleFunc("/favicon.ico", faviconHandler)
 
 
-	http.ListenAndServe(":8080", r)
+	http.ListenAndServe(":" + port, r)
 
 }
 
