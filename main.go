@@ -4,16 +4,17 @@ import (
 	"encoding/json"
 	"fmt"
 	"github.com/gorilla/mux"
-	"jakataGo/controllers"
-	"log"
-	"net/http"
 	"github.com/jinzhu/gorm"
 	_ "github.com/jinzhu/gorm/dialects/postgres"
 	"github.com/joho/godotenv"
+	"jakataGo/controllers"
+	"log"
+	"net/http"
 	"os"
 )
 
 type Review struct {
+	gorm.Model
 	Review string
 	Client string
 	Stylist string
@@ -62,6 +63,13 @@ func dbConn() (db *gorm.DB) {
 		panic(err)
 	}
 	return db
+}
+
+func init() {
+	// loads values from .env into the system
+	if err := godotenv.Load(); err != nil {
+		log.Print("No .env file found")
+	}
 }
 
 func main() {
