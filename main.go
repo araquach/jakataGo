@@ -2,10 +2,15 @@ package main
 
 import (
 	"encoding/json"
+	"fmt"
 	"github.com/gorilla/mux"
 	"jakataGo/controllers"
 	"log"
 	"net/http"
+	"github.com/jinzhu/gorm"
+	_ "github.com/jinzhu/gorm/dialects/postgres"
+	"github.com/joho/godotenv"
+	"os"
 )
 
 type Review struct {
@@ -41,24 +46,47 @@ type TeamMember struct {
 	Position int
 }
 
-func main() {
-		pageC := controllers.NewPage()
+func dbConn() (db *gorm.DB) {
+	dbhost     := os.Getenv("DB_HOST")
+	dbport     := os.Getenv("DB_PORT")
+	dbuser     := os.Getenv("DB_USER")
+	dbpassword := os.Getenv("DB_PASSWORD")
+	dbname     := os.Getenv("DB_NAME")
 
-		r := mux.NewRouter()
-		r.Handle("/", pageC.HomeView).Methods("GET")
-		r.Handle("/team", pageC.TeamView).Methods("GET")
-		r.Handle("/team_ind", pageC.TeamIndView).Methods("GET")
-		r.Handle("/blog", pageC.BlogView).Methods("GET")
-		r.Handle("/blog_ind", pageC.BlogIndView).Methods("GET")
-		r.Handle("/details", pageC.DetailsView).Methods("GET")
-		r.Handle("/contact", pageC.ContactView).Methods("GET")
-		r.Handle("/reviews", pageC.ReviewsView).Methods("GET")
-		r.Handle("/salon", pageC.SalonView).Methods("GET")
-		// r.Handle("/prices", pageC.PricesView).Methods("GET")
-		r.Handle("/recruitment", pageC.RecruitmentView).Methods("GET")
-		r.HandleFunc("/api/reviews", reviews).Methods("GET")
-		r.HandleFunc("/api/blogs", blogs).Methods("GET")
-		r.HandleFunc("/api/team", team).Methods("GET")
+	psqlInfo := fmt.Sprintf("host=%s port=%s user=%s "+
+		"password=%s dbname=%s sslmode=disable",
+		dbhost, dbport, dbuser, dbpassword, dbname)
+
+	db, err := gorm.Open("postgres", psqlInfo)
+	if err != nil {
+		panic(err)
+	}
+	return db
+}
+
+func main() {
+	port := os.Getenv("PORT")
+	if port == "" {
+		log.Fatal("$PORT must be set")
+	}
+
+	pageC := controllers.NewPage()
+
+	r := mux.NewRouter()
+	r.Handle("/", pageC.HomeView).Methods("GET")
+	r.Handle("/team", pageC.TeamView).Methods("GET")
+	r.Handle("/team_ind", pageC.TeamIndView).Methods("GET")
+	r.Handle("/blog", pageC.BlogView).Methods("GET")
+	r.Handle("/blog_ind", pageC.BlogIndView).Methods("GET")
+	r.Handle("/details", pageC.DetailsView).Methods("GET")
+	r.Handle("/contact", pageC.ContactView).Methods("GET")
+	r.Handle("/reviews", pageC.ReviewsView).Methods("GET")
+	r.Handle("/salon", pageC.SalonView).Methods("GET")
+	// r.Handle("/prices", pageC.PricesView).Methods("GET")
+	r.Handle("/recruitment", pageC.RecruitmentView).Methods("GET")
+	r.HandleFunc("/api/reviews", reviews).Methods("GET")
+	r.HandleFunc("/api/blogs", blogs).Methods("GET")
+	r.HandleFunc("/api/team", team).Methods("GET")
 
 
 	// Styles
@@ -75,8 +103,7 @@ func main() {
 	imageHandler := http.FileServer(http.Dir("./public/images/"))
 	r.PathPrefix("/images/").Handler(http.StripPrefix("/images/", imageHandler))
 
-	http.ListenAndServe(":5090", r)
-
+	http.ListenAndServe(":" + port, r)
 }
 
 func reviews(w http.ResponseWriter, r *http.Request) {
