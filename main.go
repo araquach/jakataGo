@@ -107,7 +107,7 @@ func main() {
 	http.HandleFunc("/favicon.ico", faviconHandler)
 
 
-	http.ListenAndServe(":5090", r)
+	http.ListenAndServe(":" + port, r)
 
 }
 
