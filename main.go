@@ -2,10 +2,14 @@ package main
 
 import (
 	"encoding/json"
+	"fmt"
 	"github.com/gorilla/mux"
 	"jakataGo/controllers"
 	"log"
 	"net/http"
+	"github.com/jinzhu/gorm"
+	_ "github.com/jinzhu/gorm/dialects/postgres"
+	"github.com/joho/godotenv"
 	"os"
 )
 
@@ -42,8 +46,25 @@ type TeamMember struct {
 	Position int
 }
 
-func main() {
+func dbConn() (db *gorm.DB) {
+	dbhost     := os.Getenv("DB_HOST")
+	dbport     := os.Getenv("DB_PORT")
+	dbuser     := os.Getenv("DB_USER")
+	dbpassword := os.Getenv("DB_PASSWORD")
+	dbname     := os.Getenv("DB_NAME")
 
+	psqlInfo := fmt.Sprintf("host=%s port=%s user=%s "+
+		"password=%s dbname=%s sslmode=disable",
+		dbhost, dbport, dbuser, dbpassword, dbname)
+
+	db, err := gorm.Open("postgres", psqlInfo)
+	if err != nil {
+		panic(err)
+	}
+	return db
+}
+
+func main() {
 	port := os.Getenv("PORT")
 	if port == "" {
 		log.Fatal("$PORT must be set")

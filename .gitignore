@@ -137,6 +137,7 @@ fabric.properties
 .idea/workspace.xml
 
 node_modules/node_modules/
+.env
 
 package.json
 package-lock.json
