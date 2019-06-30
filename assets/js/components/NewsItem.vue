@@ -10,7 +10,7 @@
                     </div>
                     <div class="column">
                         <h3 class="title is-4 has-text-primary">{{newsItem.Title}}</h3>
-                        <p>{{newsItem.Para[0]}}</p>
+                        <p>{{newsItem.Para}}</p>
                     </div>
                 </div>
             </a>

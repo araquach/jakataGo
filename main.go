@@ -21,13 +21,21 @@ type Review struct {
 }
 
 type BlogPost struct {
-	Slug string
-	Img string
-	Alt string
+	gorm.Model
 	Title string
-	Para []string
-	Link string
+	Slug string
 	Author string
+	MetaImg string
+	Publish int
+	Para string
+}
+
+type BlogPara struct {
+	gorm.Model
+	BlogId int
+	Para string
+	ParaPic string
+	ParaPicAlt string
 }
 
 type TeamMember struct {
@@ -78,6 +86,11 @@ func main() {
 		log.Fatal("$PORT must be set")
 	}
 
+	db := dbConn()
+	db.AutoMigrate(&Review{}, &BlogPost{}, &BlogPara{})
+	db.Close()
+	db.LogMode(true)
+
 	pageC := controllers.NewPage()
 
 	r := mux.NewRouter()
@@ -125,17 +138,13 @@ func faviconHandler(w http.ResponseWriter, r *http.Request) {
 
 func reviews(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Content-Type", "application/json")
-	r1 := Review{
-		"Great job!",
-		"Anna Alexander",
-		"Nat",
-	}
-	r2 := Review{
-		"Awsome!",
-		"Jackie Alexander",
-		"Adam",
-	}
-	revs := []Review{r1, r2}
+
+	db := dbConn()
+
+	revs := []Review{}
+	db.Find(&revs)
+
+	db.Close()
 
 	json, err := json.Marshal(revs)
 	if err != nil {
@@ -146,35 +155,13 @@ func reviews(w http.ResponseWriter, r *http.Request) {
 
 func blogs(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Content-Type", "application/json")
-	b1 := BlogPost{
-		"blog-one",
-		"http://via.placeholder.com/1000x1000",
-		"blog 1 pic",
-		"Blog Post One",
-		[]string{"First para of Blog 1", "Second Para of Blog 1", "Third Para of Blog One"},
-		"/blog/1",
-		"Adam",
-	}
-	b2 := BlogPost{
-		"blog-two",
-		"http://via.placeholder.com/1000x1000",
-		"blog 2 pic",
-		"Blog Post Two",
-		[]string{"First para of Blog 2", "Second Para of Blog 2", "Third Para of Blog Two"},
-		"/blog/2",
-		"Nat",
-	}
-	b3 := BlogPost{
-		"blog-three",
-		"http://via.placeholder.com/1000x1000",
-		"blog 3 pic",
-		"Blog Post Three",
-		[]string{"First para of Blog 3", "Second Para of Blog 3", "Third Para of Blog Three"},
-		"/blog/1",
-		"Adam",
-	}
 
-	blogs := []BlogPost{b1, b2, b3}
+	db := dbConn()
+
+	blogs := []BlogPost{}
+	db.Find(&blogs)
+
+	db.Close()
 
 	json, err := json.Marshal(blogs)
 	if err != nil {

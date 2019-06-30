@@ -3198,7 +3198,7 @@ var render = function() {
                 _vm._v(_vm._s(newsItem.Title))
               ]),
               _vm._v(" "),
-              _c("p", [_vm._v(_vm._s(newsItem.Para[0]))])
+              _c("p", [_vm._v(_vm._s(newsItem.Para))])
             ])
           ])
         ])
