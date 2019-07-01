@@ -3339,7 +3339,7 @@ var render = function() {
         _c("a", { attrs: { href: tm.ReviewLink } }, [
           _c("div", { staticClass: "card" }, [
             _c("figure", { staticClass: "image" }, [
-              _c("img", { attrs: { src: tm.Image, alt: tm.Fname } })
+              _c("img", { attrs: { src: tm.Image, alt: tm.Name } })
             ]),
             _vm._v(" "),
             _c("div", { staticClass: "card-content" }, [

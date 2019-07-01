@@ -43,6 +43,7 @@ type TeamMember struct {
 	Name string
 	Salon int
 	Level string
+	Image string
 	Para1 string
 	Para2 string
 	Para3 string
@@ -172,7 +173,7 @@ func team(w http.ResponseWriter, r *http.Request) {
 
 	db := dbConn()
 	team := []TeamMember{}
-	db.Where("Salon = 1").Find(&team)
+	db.Where("Salon = 1").Order("position asc").Find(&team)
 	db.Close()
 
 	json, err := json.Marshal(team)

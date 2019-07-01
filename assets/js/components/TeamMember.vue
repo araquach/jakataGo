@@ -4,7 +4,7 @@
             <a :href="tm.ReviewLink">
                 <div class="card">
                     <figure class="image">
-                        <img :src="tm.Image" :alt="tm.Fname">
+                        <img :src="tm.Image" :alt="tm.Name">
                     </figure>
                     <div class="card-content">
                         <div class="media">
