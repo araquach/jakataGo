@@ -3346,7 +3346,7 @@ var render = function() {
               _c("div", { staticClass: "media" }, [
                 _c("div", { staticClass: "media-content" }, [
                   _c("p", { staticClass: "title is-4 has-text-primary" }, [
-                    _vm._v(_vm._s(tm.Fname) + " " + _vm._s(tm.Lname))
+                    _vm._v(_vm._s(tm.Name))
                   ]),
                   _vm._v(" "),
                   _c("p", { staticClass: "subtitle has-text-primary" }, [

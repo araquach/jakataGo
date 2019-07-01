@@ -39,20 +39,19 @@ type BlogPara struct {
 }
 
 type TeamMember struct {
-	Fname string
-	Lname string
-	Image string
-	Level string
+	gorm.Model
+	Name string
 	Salon int
+	Level string
 	Para1 string
 	Para2 string
 	Para3 string
 	FavStyle string
-	FavProduct string
-	Price int
+	FavProd string
+	Price string
 	ReviewLink string
 	Class string
-	Position int
+	Position string
 }
 
 func dbConn() (db *gorm.DB) {
@@ -87,7 +86,7 @@ func main() {
 	}
 
 	db := dbConn()
-	db.AutoMigrate(&Review{}, &BlogPost{}, &BlogPara{})
+	db.AutoMigrate(&Review{}, &BlogPost{}, &BlogPara{}, &TeamMember{})
 	db.Close()
 	db.LogMode(true)
 
@@ -157,10 +156,8 @@ func blogs(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Content-Type", "application/json")
 
 	db := dbConn()
-
 	blogs := []BlogPost{}
 	db.Find(&blogs)
-
 	db.Close()
 
 	json, err := json.Marshal(blogs)
@@ -173,56 +170,10 @@ func blogs(w http.ResponseWriter, r *http.Request) {
 func team(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Content-Type", "application/json")
 
-	t1 := TeamMember{
-		"Adam",
-		"Carter",
-		"http://via.placeholder.com/1000x1000",
-		"Director",
-		1,
-		"Adam is a great stylist",
-		"He's the owner",
-		"Make sure you book in!",
-		"Short Bobs",
-		"Anti Gravity",
-		150,
-		"/reviews/adam",
-		"adam",
-		1,
-	}
-	t2 := TeamMember{
-		"Jimmy",
-		"Sharpe",
-		"http://via.placeholder.com/1000x1000",
-		"Director",
-		1,
-		"Jim is a great stylist",
-		"He's the manager",
-		"He's a great stylist!",
-		"Bold short cuts",
-		"Mess Up",
-		140,
-		"/reviews/jimmy",
-		"jimmy",
-		2,
-	}
-	t3 := TeamMember{
-		"Natalie",
-		"Doxey",
-		"http://via.placeholder.com/1000x1000",
-		"Freelance Senior Stylist",
-		1,
-		"Nat is a great stylist",
-		"She's freelance",
-		"She's great at extensions",
-		"Crazy Colours",
-		"Blow Me",
-		140,
-		"/reviews/nat",
-		"nat",
-		3,
-	}
-
-	team := []TeamMember{t1, t2, t3}
+	db := dbConn()
+	team := []TeamMember{}
+	db.Where("Salon = 1").Find(&team)
+	db.Close()
 
 	json, err := json.Marshal(team)
 	if err != nil {

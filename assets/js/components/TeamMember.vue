@@ -9,7 +9,7 @@
                     <div class="card-content">
                         <div class="media">
                             <div class="media-content">
-                                <p class="title is-4 has-text-primary">{{tm.Fname}} {{tm.Lname}}</p>
+                                <p class="title is-4 has-text-primary">{{tm.Name}}</p>
                                 <p class="subtitle has-text-primary">{{tm.Level}}</p>
                             </div>
                         </div>
