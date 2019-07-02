@@ -1,7 +1,7 @@
 <template>
     <div class="section columns is-3 is-multiline">
         <div v-for="(tm, index) in TeamMembers" class="column is-half">
-            <a :href="tm.ReviewLink">
+            <a :href="'/team/' + tm.Class">
                 <div class="card">
                     <figure class="image">
                         <img :src="tm.Image" :alt="tm.Name">

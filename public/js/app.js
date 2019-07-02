@@ -423,14 +423,15 @@ __webpack_require__.r(__webpack_exports__);
 /*!*********************************************!*\
   !*** ./assets/js/components/TeamMember.vue ***!
   \*********************************************/
-/*! exports provided: default */
+/*! no static exports found */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _TeamMember_vue_vue_type_template_id_506134b8___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./TeamMember.vue?vue&type=template&id=506134b8& */ "./assets/js/components/TeamMember.vue?vue&type=template&id=506134b8&");
 /* harmony import */ var _TeamMember_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./TeamMember.vue?vue&type=script&lang=js& */ "./assets/js/components/TeamMember.vue?vue&type=script&lang=js&");
-/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _TeamMember_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _TeamMember_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__[key]; }) }(__WEBPACK_IMPORT_KEY__));
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
 
 
 
@@ -460,7 +461,7 @@ component.options.__file = "assets/js/components/TeamMember.vue"
 /*!**********************************************************************!*\
   !*** ./assets/js/components/TeamMember.vue?vue&type=script&lang=js& ***!
   \**********************************************************************/
-/*! exports provided: default */
+/*! no static exports found */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -3336,7 +3337,7 @@ var render = function() {
     { staticClass: "section columns is-3 is-multiline" },
     _vm._l(_vm.TeamMembers, function(tm, index) {
       return _c("div", { staticClass: "column is-half" }, [
-        _c("a", { attrs: { href: tm.ReviewLink } }, [
+        _c("a", { attrs: { href: "/team/" + tm.Class } }, [
           _c("div", { staticClass: "card" }, [
             _c("figure", { staticClass: "image" }, [
               _c("img", { attrs: { src: tm.Image, alt: tm.Name } })
