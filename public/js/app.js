@@ -3198,7 +3198,7 @@ var render = function() {
                 _vm._v(_vm._s(newsItem.Title))
               ]),
               _vm._v(" "),
-              _c("p", [_vm._v(_vm._s(newsItem.Para[0]))])
+              _c("p", [_vm._v(_vm._s(newsItem.Para))])
             ])
           ])
         ])
@@ -3336,17 +3336,17 @@ var render = function() {
     { staticClass: "section columns is-3 is-multiline" },
     _vm._l(_vm.TeamMembers, function(tm, index) {
       return _c("div", { staticClass: "column is-half" }, [
-        _c("a", { attrs: { href: tm.ReviewLink } }, [
+        _c("a", { attrs: { href: "/team/" + tm.Class } }, [
           _c("div", { staticClass: "card" }, [
             _c("figure", { staticClass: "image" }, [
-              _c("img", { attrs: { src: tm.Image, alt: tm.Fname } })
+              _c("img", { attrs: { src: tm.Image, alt: tm.Name } })
             ]),
             _vm._v(" "),
             _c("div", { staticClass: "card-content" }, [
               _c("div", { staticClass: "media" }, [
                 _c("div", { staticClass: "media-content" }, [
                   _c("p", { staticClass: "title is-4 has-text-primary" }, [
-                    _vm._v(_vm._s(tm.Fname) + " " + _vm._s(tm.Lname))
+                    _vm._v(_vm._s(tm.Name))
                   ]),
                   _vm._v(" "),
                   _c("p", { staticClass: "subtitle has-text-primary" }, [
@@ -3405,7 +3405,7 @@ var staticRenderFns = [
       _vm._v(" "),
       _c("div", { staticClass: "column" }, [
         _c("h2", [_vm._v("Team Member Name")]),
-        _vm._v(" "),
+        _vm._v("\n        HEllo\n        "),
         _c("p", [_c("strong", [_vm._v("Para 1")])]),
         _vm._v(" "),
         _c("p", [_vm._v("Para 2")]),

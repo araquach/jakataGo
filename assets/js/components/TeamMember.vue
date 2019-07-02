@@ -1,15 +1,15 @@
 <template>
     <div class="section columns is-3 is-multiline">
         <div v-for="(tm, index) in TeamMembers" class="column is-half">
-            <a :href="tm.ReviewLink">
+            <a :href="'/team/' + tm.Class">
                 <div class="card">
                     <figure class="image">
-                        <img :src="tm.Image" :alt="tm.Fname">
+                        <img :src="tm.Image" :alt="tm.Name">
                     </figure>
                     <div class="card-content">
                         <div class="media">
                             <div class="media-content">
-                                <p class="title is-4 has-text-primary">{{tm.Fname}} {{tm.Lname}}</p>
+                                <p class="title is-4 has-text-primary">{{tm.Name}}</p>
                                 <p class="subtitle has-text-primary">{{tm.Level}}</p>
                             </div>
                         </div>

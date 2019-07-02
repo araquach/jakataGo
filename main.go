@@ -4,46 +4,55 @@ import (
 	"encoding/json"
 	"fmt"
 	"github.com/gorilla/mux"
-	"jakataGo/controllers"
-	"log"
-	"net/http"
 	"github.com/jinzhu/gorm"
 	_ "github.com/jinzhu/gorm/dialects/postgres"
 	"github.com/joho/godotenv"
+	"jakataGo/controllers"
+	"log"
+	"net/http"
 	"os"
 )
 
 type Review struct {
+	gorm.Model
 	Review string
 	Client string
 	Stylist string
 }
 
 type BlogPost struct {
-	Slug string
-	Img string
-	Alt string
+	gorm.Model
 	Title string
-	Para []string
-	Link string
+	Slug string
 	Author string
+	MetaImg string
+	Publish int
+	Para string
+}
+
+type BlogPara struct {
+	gorm.Model
+	BlogId int
+	Para string
+	ParaPic string
+	ParaPicAlt string
 }
 
 type TeamMember struct {
-	Fname string
-	Lname string
-	Image string
-	Level string
+	gorm.Model
+	Name string
 	Salon int
+	Level string
+	Image string
 	Para1 string
 	Para2 string
 	Para3 string
 	FavStyle string
-	FavProduct string
-	Price int
+	FavProd string
+	Price string
 	ReviewLink string
 	Class string
-	Position int
+	Position string
 }
 
 func dbConn() (db *gorm.DB) {
@@ -64,18 +73,30 @@ func dbConn() (db *gorm.DB) {
 	return db
 }
 
+func init() {
+	// loads values from .env into the system
+	if err := godotenv.Load(); err != nil {
+		log.Print("No .env file found")
+	}
+}
+
 func main() {
 	port := os.Getenv("PORT")
 	if port == "" {
 		log.Fatal("$PORT must be set")
 	}
 
+	db := dbConn()
+	db.AutoMigrate(&Review{}, &BlogPost{}, &BlogPara{}, &TeamMember{})
+	db.Close()
+	db.LogMode(true)
+
 	pageC := controllers.NewPage()
 
 	r := mux.NewRouter()
 	r.Handle("/", pageC.HomeView).Methods("GET")
 	r.Handle("/team", pageC.TeamView).Methods("GET")
-	r.Handle("/team_ind", pageC.TeamIndView).Methods("GET")
+	r.Handle("/team/{key}", pageC.TeamIndView).Methods("GET")
 	r.Handle("/blog", pageC.BlogView).Methods("GET")
 	r.Handle("/blog_ind", pageC.BlogIndView).Methods("GET")
 	r.Handle("/details", pageC.DetailsView).Methods("GET")
@@ -117,17 +138,13 @@ func faviconHandler(w http.ResponseWriter, r *http.Request) {
 
 func reviews(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Content-Type", "application/json")
-	r1 := Review{
-		"Great job!",
-		"Anna Alexander",
-		"Nat",
-	}
-	r2 := Review{
-		"Awsome!",
-		"Jackie Alexander",
-		"Adam",
-	}
-	revs := []Review{r1, r2}
+
+	db := dbConn()
+
+	revs := []Review{}
+	db.Find(&revs)
+
+	db.Close()
 
 	json, err := json.Marshal(revs)
 	if err != nil {
@@ -138,35 +155,11 @@ func reviews(w http.ResponseWriter, r *http.Request) {
 
 func blogs(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Content-Type", "application/json")
-	b1 := BlogPost{
-		"blog-one",
-		"http://via.placeholder.com/1000x1000",
-		"blog 1 pic",
-		"Blog Post One",
-		[]string{"First para of Blog 1", "Second Para of Blog 1", "Third Para of Blog One"},
-		"/blog/1",
-		"Adam",
-	}
-	b2 := BlogPost{
-		"blog-two",
-		"http://via.placeholder.com/1000x1000",
-		"blog 2 pic",
-		"Blog Post Two",
-		[]string{"First para of Blog 2", "Second Para of Blog 2", "Third Para of Blog Two"},
-		"/blog/2",
-		"Nat",
-	}
-	b3 := BlogPost{
-		"blog-three",
-		"http://via.placeholder.com/1000x1000",
-		"blog 3 pic",
-		"Blog Post Three",
-		[]string{"First para of Blog 3", "Second Para of Blog 3", "Third Para of Blog Three"},
-		"/blog/1",
-		"Adam",
-	}
 
-	blogs := []BlogPost{b1, b2, b3}
+	db := dbConn()
+	blogs := []BlogPost{}
+	db.Find(&blogs)
+	db.Close()
 
 	json, err := json.Marshal(blogs)
 	if err != nil {
@@ -178,56 +171,25 @@ func blogs(w http.ResponseWriter, r *http.Request) {
 func team(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Content-Type", "application/json")
 
-	t1 := TeamMember{
-		"Adam",
-		"Carter",
-		"http://via.placeholder.com/1000x1000",
-		"Director",
-		1,
-		"Adam is a great stylist",
-		"He's the owner",
-		"Make sure you book in!",
-		"Short Bobs",
-		"Anti Gravity",
-		150,
-		"/reviews/adam",
-		"adam",
-		1,
-	}
-	t2 := TeamMember{
-		"Jimmy",
-		"Sharpe",
-		"http://via.placeholder.com/1000x1000",
-		"Director",
-		1,
-		"Jim is a great stylist",
-		"He's the manager",
-		"He's a great stylist!",
-		"Bold short cuts",
-		"Mess Up",
-		140,
-		"/reviews/jimmy",
-		"jimmy",
-		2,
-	}
-	t3 := TeamMember{
-		"Natalie",
-		"Doxey",
-		"http://via.placeholder.com/1000x1000",
-		"Freelance Senior Stylist",
-		1,
-		"Nat is a great stylist",
-		"She's freelance",
-		"She's great at extensions",
-		"Crazy Colours",
-		"Blow Me",
-		140,
-		"/reviews/nat",
-		"nat",
-		3,
-	}
+	db := dbConn()
+	team := []TeamMember{}
+	db.Where("Salon = 1").Order("position asc").Find(&team)
+	db.Close()
 
-	team := []TeamMember{t1, t2, t3}
+	json, err := json.Marshal(team)
+	if err != nil {
+		log.Println(err)
+	}
+	w.Write(json)
+}
+
+func teamInd(w http.ResponseWriter, r *http.Request) {
+	w.Header().Set("Content-Type", "application/json")
+
+	db := dbConn()
+	team := []TeamMember{}
+	db.Where("Salon = 1").Order("position asc").Find(&team)
+	db.Close()
 
 	json, err := json.Marshal(team)
 	if err != nil {
