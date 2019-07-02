@@ -43,30 +43,7 @@ type View struct {
 
 func (v *View) Render(w http.ResponseWriter, data interface{}) error {
 
-	//r1 := Review{
-	//	"Wonderful experience, love my hair",
-	//	"Anna Alexander",
-	//	"Adam",
-	//}
-
-	b1 := Blog{
-		"Blog Post One",
-		"This is the first Blog Post",
-		"Adam",
-	}
-	b2 := Blog{
-		"Blog Post 2",
-		"This is Blog post two",
-		"Nat",
-	}
-	b3 := Blog{
-		"Blog Post 3",
-		"This is the third Blog Post",
-		"Matt",
-	}
-
-	blogs := []Blog{b1, b2, b3}
-
+	blogs := []Blog{}
 
 	w.Header().Set("Content-Type", "text/html")
 	return v.Template.ExecuteTemplate(w, v.Layout, blogs)
