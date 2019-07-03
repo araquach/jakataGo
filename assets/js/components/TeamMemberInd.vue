@@ -2,20 +2,19 @@
     <div class="columns section">
         <div class="column is-6">
             <figure class="image">
-                <img src="http://via.placeholder.com/800x800" alt="team member">
+                <img :src="tm[0].Image" :alt="tm[0].Alt">
             </figure>
         </div>
         <div class="column">
-            <h2>Team Member Name</h2>
-            HEllo
-            <p><strong>Para 1</strong></p>
-            <p>Para 2</p>
-            <p>Para 3</p>
-            <p><strong>Favourite Style: </strong>fav_style</p>
-            <p><strong>Favourite Product: </strong>fav_prod</p>
-            <p>Average Cut &amp; Colour with Team Member name: &pound;team_member-price</p>
+            <h2 class="title is-3">{{tm[0].Name}}</h2>
+            <p><strong>{{tm[0].Para1}}</strong></p>
+            <p>{{tm[0].Para2}}<</p>
+            <p>{{tm[0].Para3}}<</p>
+            <p><strong>Favourite Style: </strong>{{tm[0].FavStyle}}</p>
+            <p><strong>Favourite Product: </strong>{{tm[0].FavProd}}</p>
+            <p>Average Cut &amp; Colour with Team Member name: &pound;{{tm[0].Price}}</p>
 
-            <a href="/team #teammember-id">Back to the full team</a>
+            <a :href="'/team#' + tm[0].Class">Back to the full team</a>
 
             <div id="fb-like">
                 <div class="fb-like" data-href="http://www.jakatasalon.co.uk/team/team-member-name" data-width="250" data-layout="button" data-action="like" data-show-faces="true" data-share="true"></div>
@@ -29,12 +28,12 @@
 
         data() {
             return {
-                TeamMembers: []
+                tm : []
             }
         },
 
         mounted() {
-            axios.get('/api/team').then(response => this.TeamMembers = response.data);
+            axios.get('/api/team').then(response => this.tm = response.data);
         }
     }
 </script>

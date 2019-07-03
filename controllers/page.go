@@ -16,7 +16,7 @@ func NewPage() *Page {
 		ReviewsView: views.NewView("main", "views/pages/reviews.gohtml"),
 		SalonView: views.NewView("main", "views/pages/salon.gohtml"),
 		TeamView: views.NewView("main", "views/pages/team.gohtml"),
-		TeamIndView: views.NewView("main", "views/pages/team_ind.gohtml"),
+		TeamIndView: views.NewView("main", "views/pages/teamInd.gohtml"),
 	}
 }
 

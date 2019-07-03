@@ -6,18 +6,6 @@ import (
 	"path/filepath"
 )
 
-type Blog struct {
-	Title string
-	Para string
-	Author string
-}
-
-type Review struct {
-	Review string
-	Client string
-	Stylist string
-}
-
 var (
 	LayoutDir   string = "views/layouts/"
 	TemplateExt string = ".gohtml"
@@ -42,11 +30,8 @@ type View struct {
 }
 
 func (v *View) Render(w http.ResponseWriter, data interface{}) error {
-
-	blogs := []Blog{}
-
 	w.Header().Set("Content-Type", "text/html")
-	return v.Template.ExecuteTemplate(w, v.Layout, blogs)
+	return v.Template.ExecuteTemplate(w, v.Layout, nil)
 }
 
 func (v *View) ServeHTTP(w http.ResponseWriter, r *http.Request) {

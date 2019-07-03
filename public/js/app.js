@@ -2585,18 +2585,17 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
-      TeamMembers: []
+      tm: []
     };
   },
   mounted: function mounted() {
     var _this = this;
 
     axios.get('/api/team').then(function (response) {
-      return _this.TeamMembers = response.data;
+      return _this.tm = response.data;
     });
   }
 });
@@ -3336,7 +3335,7 @@ var render = function() {
     { staticClass: "section columns is-3 is-multiline" },
     _vm._l(_vm.TeamMembers, function(tm, index) {
       return _c("div", { staticClass: "column is-half" }, [
-        _c("a", { attrs: { href: "/team/" + tm.Class } }, [
+        _c("a", { attrs: { id: tm.Class, href: "/team/" + tm.Class } }, [
           _c("div", { staticClass: "card" }, [
             _c("figure", { staticClass: "image" }, [
               _c("img", { attrs: { src: tm.Image, alt: tm.Name } })
@@ -3384,68 +3383,64 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm._m(0)
+  return _c("div", { staticClass: "columns section" }, [
+    _c("div", { staticClass: "column is-6" }, [
+      _c("figure", { staticClass: "image" }, [
+        _c("img", { attrs: { src: _vm.tm[0].Image, alt: _vm.tm[0].Alt } })
+      ])
+    ]),
+    _vm._v(" "),
+    _c("div", { staticClass: "column" }, [
+      _c("h2", { staticClass: "title is-3" }, [_vm._v(_vm._s(_vm.tm[0].Name))]),
+      _vm._v(" "),
+      _c("p", [_c("strong", [_vm._v(_vm._s(_vm.tm[0].Para1))])]),
+      _vm._v(" "),
+      _c("p", [_vm._v(_vm._s(_vm.tm[0].Para2) + "<")]),
+      _vm._v(" "),
+      _c("p", [_vm._v(_vm._s(_vm.tm[0].Para3) + "<")]),
+      _vm._v(" "),
+      _c("p", [
+        _c("strong", [_vm._v("Favourite Style: ")]),
+        _vm._v(_vm._s(_vm.tm[0].FavStyle))
+      ]),
+      _vm._v(" "),
+      _c("p", [
+        _c("strong", [_vm._v("Favourite Product: ")]),
+        _vm._v(_vm._s(_vm.tm[0].FavProd))
+      ]),
+      _vm._v(" "),
+      _c("p", [
+        _vm._v(
+          "Average Cut & Colour with Team Member name: £" +
+            _vm._s(_vm.tm[0].Price)
+        )
+      ]),
+      _vm._v(" "),
+      _c("a", { attrs: { href: "/team#" + _vm.tm[0].Class } }, [
+        _vm._v("Back to the full team")
+      ]),
+      _vm._v(" "),
+      _vm._m(0)
+    ])
+  ])
 }
 var staticRenderFns = [
   function() {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "columns section" }, [
-      _c("div", { staticClass: "column is-6" }, [
-        _c("figure", { staticClass: "image" }, [
-          _c("img", {
-            attrs: {
-              src: "http://via.placeholder.com/800x800",
-              alt: "team member"
-            }
-          })
-        ])
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "column" }, [
-        _c("h2", [_vm._v("Team Member Name")]),
-        _vm._v("\n        HEllo\n        "),
-        _c("p", [_c("strong", [_vm._v("Para 1")])]),
-        _vm._v(" "),
-        _c("p", [_vm._v("Para 2")]),
-        _vm._v(" "),
-        _c("p", [_vm._v("Para 3")]),
-        _vm._v(" "),
-        _c("p", [
-          _c("strong", [_vm._v("Favourite Style: ")]),
-          _vm._v("fav_style")
-        ]),
-        _vm._v(" "),
-        _c("p", [
-          _c("strong", [_vm._v("Favourite Product: ")]),
-          _vm._v("fav_prod")
-        ]),
-        _vm._v(" "),
-        _c("p", [
-          _vm._v(
-            "Average Cut & Colour with Team Member name: £team_member-price"
-          )
-        ]),
-        _vm._v(" "),
-        _c("a", { attrs: { href: "/team #teammember-id" } }, [
-          _vm._v("Back to the full team")
-        ]),
-        _vm._v(" "),
-        _c("div", { attrs: { id: "fb-like" } }, [
-          _c("div", {
-            staticClass: "fb-like",
-            attrs: {
-              "data-href": "http://www.jakatasalon.co.uk/team/team-member-name",
-              "data-width": "250",
-              "data-layout": "button",
-              "data-action": "like",
-              "data-show-faces": "true",
-              "data-share": "true"
-            }
-          })
-        ])
-      ])
+    return _c("div", { attrs: { id: "fb-like" } }, [
+      _c("div", {
+        staticClass: "fb-like",
+        attrs: {
+          "data-href": "http://www.jakatasalon.co.uk/team/team-member-name",
+          "data-width": "250",
+          "data-layout": "button",
+          "data-action": "like",
+          "data-show-faces": "true",
+          "data-share": "true"
+        }
+      })
     ])
   }
 ]

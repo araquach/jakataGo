@@ -96,7 +96,7 @@ func main() {
 	r := mux.NewRouter()
 	r.Handle("/", pageC.HomeView).Methods("GET")
 	r.Handle("/team", pageC.TeamView).Methods("GET")
-	r.Handle("/team/{key}", pageC.TeamIndView).Methods("GET")
+	r.Handle("/teamInd", pageC.TeamIndView).Methods("GET")
 	r.Handle("/blog", pageC.BlogView).Methods("GET")
 	r.Handle("/blog_ind", pageC.BlogIndView).Methods("GET")
 	r.Handle("/details", pageC.DetailsView).Methods("GET")
@@ -105,6 +105,8 @@ func main() {
 	r.Handle("/salon", pageC.SalonView).Methods("GET")
 	// r.Handle("/prices", pageC.PricesView).Methods("GET")
 	r.Handle("/recruitment", pageC.RecruitmentView).Methods("GET")
+
+	// API
 	r.HandleFunc("/api/reviews", reviews).Methods("GET")
 	r.HandleFunc("/api/blogs", blogs).Methods("GET")
 	r.HandleFunc("/api/team", team).Methods("GET")
@@ -169,21 +171,6 @@ func blogs(w http.ResponseWriter, r *http.Request) {
 }
 
 func team(w http.ResponseWriter, r *http.Request) {
-	w.Header().Set("Content-Type", "application/json")
-
-	db := dbConn()
-	team := []TeamMember{}
-	db.Where("Salon = 1").Order("position asc").Find(&team)
-	db.Close()
-
-	json, err := json.Marshal(team)
-	if err != nil {
-		log.Println(err)
-	}
-	w.Write(json)
-}
-
-func teamInd(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Content-Type", "application/json")
 
 	db := dbConn()
