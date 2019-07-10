@@ -3,11 +3,9 @@ package main
 import (
 	"encoding/json"
 	"fmt"
-	"github.com/gorilla/mux"
 	"github.com/jinzhu/gorm"
 	_ "github.com/jinzhu/gorm/dialects/postgres"
 	"github.com/joho/godotenv"
-	"jakataGo/controllers"
 	"log"
 	"net/http"
 	"os"
@@ -89,49 +87,17 @@ func main() {
 	db := dbConn()
 	db.AutoMigrate(&Review{}, &BlogPost{}, &BlogPara{}, &TeamMember{})
 	db.Close()
+	db.
 	db.LogMode(true)
 
-	pageC := controllers.NewPage()
+	srv := &http.Server{
+		Addr: ":" + port,
+		Handler: routes(),
+	}
 
-	r := mux.NewRouter()
-	r.Handle("/", pageC.HomeView).Methods("GET")
-	r.Handle("/team", pageC.TeamView).Methods("GET")
-	r.Handle("/teamInd", pageC.TeamIndView).Methods("GET")
-	r.Handle("/blog", pageC.BlogView).Methods("GET")
-	r.Handle("/blog_ind", pageC.BlogIndView).Methods("GET")
-	r.Handle("/details", pageC.DetailsView).Methods("GET")
-	r.Handle("/contact", pageC.ContactView).Methods("GET")
-	r.Handle("/reviews", pageC.ReviewsView).Methods("GET")
-	r.Handle("/salon", pageC.SalonView).Methods("GET")
-	// r.Handle("/prices", pageC.PricesView).Methods("GET")
-	r.Handle("/recruitment", pageC.RecruitmentView).Methods("GET")
-
-	// API
-	r.HandleFunc("/api/reviews", reviews).Methods("GET")
-	r.HandleFunc("/api/blogs", blogs).Methods("GET")
-	r.HandleFunc("/api/team", team).Methods("GET")
-
-
-	// Styles
-	assetHandler := http.FileServer(http.Dir("./public/css/"))
-	assetHandler = http.StripPrefix("/public/css/", assetHandler)
-	r.PathPrefix("/public/css/").Handler(assetHandler)
-
-	// JS
-	jsHandler := http.FileServer(http.Dir("./public/js/"))
-	jsHandler = http.StripPrefix("/public/js/", jsHandler)
-	r.PathPrefix("/public/js/").Handler(jsHandler)
-
-	//Images
-	imageHandler := http.FileServer(http.Dir("./public/images/"))
-	r.PathPrefix("/images/").Handler(http.StripPrefix("/images/", imageHandler))
-
-
-	http.HandleFunc("/favicon.ico", faviconHandler)
-
-
-	http.ListenAndServe(":" + port, r)
-
+	log.Printf("Starting server on %s", port)
+	err := srv.ListenAndServe()
+	log.Fatal(err)
 }
 
 func faviconHandler(w http.ResponseWriter, r *http.Request) {
