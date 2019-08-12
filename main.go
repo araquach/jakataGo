@@ -129,6 +129,8 @@ func main() {
 
 	http.HandleFunc("/favicon.ico", faviconHandler)
 
+	log.Printf("Starting server on %s", port)
+
 
 	http.ListenAndServe(":" + port, r)
 
