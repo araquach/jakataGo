@@ -15560,8 +15560,8 @@ module.exports = g;
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /Users/adam-macbook/go/src/jakataGo/assets/js/app.js */"./assets/js/app.js");
-module.exports = __webpack_require__(/*! /Users/adam-macbook/go/src/jakataGo/assets/sass/app.scss */"./assets/sass/app.scss");
+__webpack_require__(/*! /Users/adam-home/GoSites/jakataGo/assets/js/app.js */"./assets/js/app.js");
+module.exports = __webpack_require__(/*! /Users/adam-home/GoSites/jakataGo/assets/sass/app.scss */"./assets/sass/app.scss");
 
 
 /***/ })

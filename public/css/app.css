@@ -11739,7 +11739,7 @@ label.panel-block:hover {
 
 /* Main Styling */
 
-body {
+html {
   background: url("/images/main/titanium.jpg") repeat-x left top #51565f;
 }
 
